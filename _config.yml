@@ -16,3 +16,5 @@ contacts:
   - icon: fab fa-github
     title: GitHub
     value: https://github.com/fjguillen-96
+  
+theme: jekyll-theme-minimal
