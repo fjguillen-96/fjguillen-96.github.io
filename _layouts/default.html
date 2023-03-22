@@ -91,16 +91,21 @@
     
     <script>
           document.getElementById('darkModeToggle').addEventListener('click', function () {
-        const body = document.body;
+    const body = document.body;
+    const moonIcon = document.querySelector('.dark-mode-toggle i');
 
-        if (body.classList.contains('dark-mode')) {
-            body.classList.remove('dark-mode');
-            body.classList.add('light-mode');
-        } else {
-            body.classList.remove('light-mode');
-            body.classList.add('dark-mode');
-        }
-    });
+    if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        moonIcon.classList.remove('fas'); // Remove the solid moon icon
+        moonIcon.classList.add('far'); // Add the regular (outline) moon icon
+    } else {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        moonIcon.classList.remove('far'); // Remove the regular (outline) moon icon
+        moonIcon.classList.add('fas'); // Add the solid moon icon
+    }
+});
     </script>
   </body>
 </html>
