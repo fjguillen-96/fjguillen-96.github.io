@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5DWRFFZJS8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-5DWRFFZJS8');
+    </script>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,6 +20,14 @@
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
+    
+    <style>
+      .dark-mode {
+        background-color: #1a1a1a;
+        color: #fff;
+      }
+    </style>
+    
   </head>
   <body>
     <div class="wrapper">
@@ -29,6 +47,9 @@
           <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
         </ul>
         {% endif %}
+        
+        <button id="dark-mode-button" onclick="toggleDarkMode()">Dark Mode</button>
+        
       </header>
       <section>
 
