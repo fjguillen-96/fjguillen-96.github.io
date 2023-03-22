@@ -32,7 +32,6 @@
           cursor: pointer;
           font-size: 24px;
           padding: 8px;
-          position: fixed
       }
 
       .dark-mode {
@@ -55,12 +54,22 @@
 .dark-mode .moon-icon {
     color: #f0f0f0; /* Color for the icon in dark mode */
 }
+.dark-mode-container {
+    position: fixed; /* Add this line */
+    top: 20px; /* Distance from the top of the screen */
+    right: 20px; /* Distance from the right side of the screen */
+    z-index: 1000; /* Ensure the container is on top of other elements */
+}
+
     </style>
-   <button id="darkModeToggle" class="dark-mode-toggle">
-    <i class="far fa-moon"></i>
-  </button>
   </head>
   <body>
+    <div class="dark-mode-container">
+      <button id="darkModeToggle" class="dark-mode-toggle">
+          <i class="far fa-moon moon-icon"></i>
+      </button>
+  </div>
+
     <div class="wrapper">
       <header>
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
