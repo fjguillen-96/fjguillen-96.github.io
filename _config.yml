@@ -1,19 +1,18 @@
-title: Francisco Javier Guillén Navarro # your name (or website title) here
+# Personal information
+title: Francisco Javier Guillén Navarro
 subtitle: Aerospace Engineer
-logo: "/images/logo.png?raw=true" # your photo (or logo) here
-description: > # your text below (remove <br> elements if you don't need line breaks)
-  <br><br>
+logo: "/images/logo.png?raw=true"
+description: >
   An aerospace engineer with a passion for programming and artificial intelligence
-  <br><br>
-  <div style="display: flex; justify-content: space-between;">
-    <div>
-      <i class="fas fa-map-marker-alt"></i> Location
-    </div>
-    <div>
-      <a href="https://www.linkedin.com/in/fj-guillen-navarro/" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-linkedin"></i> View My LinkedIn Profile
-      </a>
-    </div>
-    <div>
-      <a href="https://github.com/fjguillen-96" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-github"></i> GitHub
+
+# Contact information
+contacts:
+  - icon: fas fa-map-marker-alt
+    title: Location
+    value: C/Amado Nervo, Madrid
+  - icon: fab fa-linkedin
+    title: LinkedIn
+    value: https://www.linkedin.com/in/fj-guillen-navarro/
+  - icon: fab fa-github
+    title: GitHub
+    value: https://github.com/fjguillen-96
