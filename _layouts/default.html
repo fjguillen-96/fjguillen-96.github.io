@@ -60,7 +60,12 @@
     right: 20px; /* Distance from the right side of the screen */
     z-index: 1000; /* Ensure the container is on top of other elements */
 }
-
+/* Mobile devices (max-width: 767px) */
+@media (max-width: 767px) {
+    .dark-mode-container {
+        position: static; /* Resets the position property to its default value */
+    }
+}
     </style>
   </head>
   <body>
