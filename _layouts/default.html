@@ -43,6 +43,10 @@
           background-color: #ffffff;
           color: #212121;
       }
+
+      .dark-mode .dark-mode-toggle i {
+    color: #f0f0f0; /* This is the same color as the dark mode text color */
+}
     </style>
    <button id="darkModeToggle" class="dark-mode-toggle" onclick="toggleDarkMode()">
     <i class="far fa-moon"></i>
@@ -91,19 +95,14 @@
     
     <script>
           document.getElementById('darkModeToggle').addEventListener('click', function () {
-    const body = document.body;
-    const moonIcon = document.querySelector('.dark-mode-toggle i');
+    const html = document.documentElement;
 
-    if (body.classList.contains('dark-mode')) {
-        body.classList.remove('dark-mode');
-        body.classList.add('light-mode');
-        moonIcon.classList.remove('fas'); // Remove the solid moon icon
-        moonIcon.classList.add('far'); // Add the regular (outline) moon icon
+    if (html.classList.contains('dark-mode')) {
+        html.classList.remove('dark-mode');
+        html.classList.add('light-mode');
     } else {
-        body.classList.remove('light-mode');
-        body.classList.add('dark-mode');
-        moonIcon.classList.remove('far'); // Remove the regular (outline) moon icon
-        moonIcon.classList.add('fas'); // Add the solid moon icon
+        html.classList.remove('light-mode');
+        html.classList.add('dark-mode');
     }
 });
     </script>
