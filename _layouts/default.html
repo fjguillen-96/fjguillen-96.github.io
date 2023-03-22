@@ -20,18 +20,14 @@
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
-    
-<<<<<<< HEAD
+
     <style>
       .dark-mode {
         background-color: #1a1a1a;
         color: #fff;
       }
     </style>
-=======
-    
->>>>>>> 832daa7befb7da43cbe2deba0a17ac4431e0e6c6
-    
+
   </head>
   <body>
     <div class="wrapper">
@@ -72,5 +68,12 @@
       ga('send', 'pageview');
     </script>
     {% endif %}
+
+    <script>
+      function toggleDarkMode() {
+        var body = document.body;
+        body.classList.toggle("dark-mode");
+      }
+    </script>
   </body>
 </html>
