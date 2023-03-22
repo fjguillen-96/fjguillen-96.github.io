@@ -20,20 +20,31 @@
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
-    
-<<<<<<< HEAD
+
     <style>
-      #dark-mode-button img {
-        width: 1.5em;
-        height: 1.5em;
-        margin-right: 0.5em;
-        fill: currentColor;
+            body {
+          transition: background-color 0.5s ease, color 0.5s ease;
+      }
+
+      .dark-mode-toggle {
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          font-size: 24px;
+          padding: 8px;
+      }
+
+      .dark-mode {
+          background-color: #212121;
+          color: #f0f0f0;
+      }
+
+      .light-mode {
+          background-color: #ffffff;
+          color: #212121;
       }
     </style>
-=======
-    
->>>>>>> 832daa7befb7da43cbe2deba0a17ac4431e0e6c6
-    
+
   </head>
   <body>
     <div class="wrapper">
@@ -54,9 +65,9 @@
         </ul>
         {% endif %}
         
-        <button id="dark-mode-button" onclick="toggleDarkMode()">
-          <img src="moon.svg" alt="Moon icon">
-          Dark Mode
+      
+        <button id="darkModeToggle" class="dark-mode-toggle" onclick="toggleDarkMode()">
+          <i class="far fa-moon"></i>
         </button>
         
       </header>
@@ -77,14 +88,19 @@
       ga('send', 'pageview');
     </script>
     {% endif %}
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-      <path fill="currentColor" d="M17.625 11.365c-.122-.05-.248-.065-.373-.046-1.085.23-2.146.575-3.164 1.03-1.309.6-2.524 1.42-3.577 2.457-.285.292-.251.765.058 1.05.292.286.764.251 1.049-.058 1.016-1.04 2.191-1.857 3.436-2.414.124-.048.256-.063.384-.036.13.028.251.095.34.189.288.265.313.72.047 1.007-1.505 1.545-2.634 3.573-3.293 5.844-.086.297.045.614.327.76.101.052.211.078.322.078.234 0 .465-.102.623-.296.829-.973 1.749-1.786 2.772-2.406 1.28-.74 2.634-1.364 4.02-1.865.328-.136.533-.468.533-.814s-.205-.678-.533-.814z"/>
-    </svg>
+    
     <script>
-      function toggleDarkMode() {
-        var body = document.body;
-        body.classList.toggle("dark-mode");
-      }
+          document.getElementById('darkModeToggle').addEventListener('click', function () {
+        const body = document.body;
+
+        if (body.classList.contains('dark-mode')) {
+            body.classList.remove('dark-mode');
+            body.classList.add('light-mode');
+        } else {
+            body.classList.remove('light-mode');
+            body.classList.add('dark-mode');
+        }
+    });
     </script>
   </body>
 </html>
