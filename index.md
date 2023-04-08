@@ -20,7 +20,7 @@ Implementing natural language processing (NLP) models to analyze sentiment in so
 
 * &#9881;&#9881; [DEVELOPING...] &#9881;&#9881;
 
-### <span class="llm-lang">LLM + LangChain `:bird:`:chains: projects</span>
+### <span class="llm-lang">LLM + LangChain 🐦⛓️ projects</span>
 
 Fine Tuning pre-trained LLM and link with other tools via LangChain :bird::chains:
 
@@ -44,7 +44,7 @@ My solution to some Google's Kick Start questions:
 
 * &#9881;&#9881; [DEVELOPING...] &#9881;&#9881;
 
-### <span class="codeabbey">CodeAbbey :house:</span> 
+### <span class="codeabbey">CodeAbbey 🏠</span> 
 
 At the request of the web itself I can't publish in Github the resolution to the problems, so I leave here the [link](https://www.codeabbey.com/index/task_list) to the web with all the problems it contains. [*if you want the code of any of them you can ask me for it without any problem  *]  
 
