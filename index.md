@@ -3,42 +3,42 @@
 ## <span class="ml-projects">Machine Learning / Deep Learning Projects</span>
 
 
-### <span class="img-enh">**Image Enhancer** </span>
+### <span class="img-enh">Image Enhancer </span>
 Using convolutional neural networks (CNN) and libraries such as TensorFlow or PyTorch to increase the image definition and then deploy it as a web application
 
 * &#9881;&#9881; [DEVELOPING...] &#9881;&#9881;
-<br><br>
-### <span class="obj-detc">**Object Detection Application** </span>
+
+### <span class="obj-detc">Object Detection Application </span>
 
 Creating an object detection model that can detect and track objects in a video stream, such as people, cars, or animals. Use the COCO dataset to train the model and then deploy it as a desktop application.
 
 * &#9881;&#9881; [DEVELOPING...] &#9881;&#9881;
-<br><br>
-###  <span class="tw-sent">**Twitter Sentiment about Specific Topic Web App** </span>
+
+###  <span class="tw-sent">Twitter Sentiment about Specific Topic Web App </span>
 
 Implementing natural language processing (NLP) models to analyze sentiment in some product, topic or event through tweets.Libraries like NLTK, SpaCy, or Hugging Face's Transformers.
 
 * &#9881;&#9881; [DEVELOPING...] &#9881;&#9881;
-<br><br>
-### <span class="llm-lang">**LLM + LangChain :bird::chains: projects**</span>
+
+### <span class="llm-lang">LLM + LangChain :bird::chains: projects</span>
 
 Fine Tuning pre-trained LLM and link with other tools via LangChain :bird::chains:
 
 * &#9881;&#9881; [DEVELOPING...] &#9881;&#9881;
-<br><br>
+
 ## <span class="prog-fan">Programming Fan</span>
 
 ### <span class="web-scrap">Web Scraping some sites</span>
 Creating web scrapers using Beautiful Soup, Requests, or Scrapy to extract useful information:
-* <span class="adif-st">**adif-status:**</span>
+* <span class="adif-st">adif-status:</span>
 This Python module allows you to obtain the arrival times of trains at different stations in Spain using the Adif website. ([GitHub](https://github.com/fjguillen-96/adif-status)).
-<br><br>
+
 ### <span class="sud-sol">Sudoku Solver</span> 
 
 Developing a Sudoku solver using backtracking or other search algorithms, and then deploy the solver as a web application using Flask or Django. Allow users to upload images of Sudoku puzzles or enter the puzzle manually, and then display the solution on the screen.
 
 * &#9881;&#9881; [DEVELOPING...] &#9881;&#9881;
-<br><br>
+
 ### <span class="goog-kick">Google Kick Star</span> 
 My solution to some Google's Kick Start questions:
 
@@ -65,10 +65,10 @@ Degree Thesis repository:
 
 <div style="text-align: justify">This repository can be separated in two main foldes. The rocket simulator and the chemical equilibrium app:</div>
 
-* <span class="lau-rock">**Launch rocket simulation:**</span> 
+* <span class="lau-rock">Launch rocket simulation:</span> 
 text ([GitHub](https://github.com/chriskhanhtran/CS224n-NLP-Solutions/tree/master/assignments/)).
 
-* <span class="cea-py">**Chemical Equilibrium with Python Applications:** </span> 
+* <span class="cea-py">Chemical Equilibrium with Python Applications: </span> 
  text ([GitHub](https://github.com/chriskhanhtran/CS224n-NLP-Assignments/tree/master/assignments/a3)).
 
 
