@@ -20,7 +20,7 @@ Implementing natural language processing (NLP) models to analyze sentiment in so
 
 * &#9881;&#9881; [DEVELOPING...] &#9881;&#9881;
 
-### <span class="llm-lang">LLM + LangChain :bird::chains: projects</span>
+### <span class="llm-lang">LLM + LangChain `:bird:`:chains: projects</span>
 
 Fine Tuning pre-trained LLM and link with other tools via LangChain :bird::chains:
 
