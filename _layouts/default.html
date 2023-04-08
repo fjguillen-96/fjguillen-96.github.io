@@ -48,8 +48,15 @@
     color: #f0f0f0; /* This is the same color as the dark mode text color */
 }
 .moon-icon {
+  background-image: url('/path/to/moon-icon.svg');
     color: #212121; /* Default color for the icon in light mode */
+
 }
+.sun-icon {
+  background-image: url('/path/to/sun-icon.svg');
+  color: #f0f0f0;
+}
+
 
 .dark-mode .moon-icon {
     color: #f0f0f0; /* Color for the icon in dark mode */
@@ -125,14 +132,17 @@
     const moonIcon = document.querySelector('.moon-icon');
 
     if (body.classList.contains('dark-mode')) {
-        body.classList.remove('dark-mode');
-        body.classList.add('light-mode');
-        moonIcon.classList.remove('dark-mode');
-    } else {
-        body.classList.remove('light-mode');
-        body.classList.add('dark-mode');
-        moonIcon.classList.add('dark-mode');
-    }
+  body.classList.remove('dark-mode');
+  body.classList.add('light-mode');
+  moonIcon.classList.remove('moon-icon');
+  moonIcon.classList.add('sun-icon');
+} else {
+  body.classList.remove('light-mode');
+  body.classList.add('dark-mode');
+  moonIcon.classList.remove('sun-icon');
+  moonIcon.classList.add('moon-icon');
+}
+
 });
     </script>
   </body>
