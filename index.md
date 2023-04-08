@@ -1,6 +1,7 @@
 # Portfolio 
 
-## Machine Learning / Deep Learning Projects
+## <span class="ml-projects">Machine Learning / Deep Learning Projects</span>
+
 
 ### **Image Enhancer**
 Using convolutional neural networks (CNN) and libraries such as TensorFlow or PyTorch to increase the image definition and then deploy it as a web application
