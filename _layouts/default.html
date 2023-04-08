@@ -49,7 +49,7 @@
 }
 .moon-icon {
   background-image: url('/path/to/moon-icon.svg');
-    color: #212121; /* Default color for the icon in light mode */
+  color: #212121; /* Default color for the icon in light mode */
 
 }
 .sun-icon {
@@ -134,14 +134,14 @@
     if (body.classList.contains('dark-mode')) {
   body.classList.remove('dark-mode');
   body.classList.add('light-mode');
-  moonIcon.classList.remove('moon-icon');
-  moonIcon.classList.add('sun-icon');
+  moonIcon.remove();
 } else {
   body.classList.remove('light-mode');
   body.classList.add('dark-mode');
-  moonIcon.classList.remove('sun-icon');
-  moonIcon.classList.add('moon-icon');
+  moonIcon.classList.remove('moon-icon');
+  moonIcon.classList.add('sun-icon');
 }
+
 
 });
     </script>
