@@ -46,7 +46,7 @@ My solution to some Google's Kick Start questions:
 
 ### <span class="codeabbey">CodeAbbey 🏠</span> 
 
-At the request of the web itself I can't publish in Github the resolution to the problems, so I leave here the [link](https://www.codeabbey.com/index/task_list) to the web with all the problems it contains. [*if you want the code of any of them you can ask me for it without any problem  *]  
+At the request of the web itself I can't publish in Github the resolution to the problems, so I leave here the [link](https://www.codeabbey.com/index/task_list) to the web with all the problems it contains. [if you want the code of any of them you can ask me for it without any problem]  
 
 <img src="images/codeabbybanner.png"/>
 <br><br>
