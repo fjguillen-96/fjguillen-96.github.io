@@ -1,66 +1,131 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Francisco Javier Guillén | Automatización e IA</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        // Lógica de Modo Noche
+        tailwind.config = {
+            darkMode: 'class',
+        }
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .bento-card { @apply bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .bento-item { @apply bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-300">
 
-    <nav class="flex justify-between items-center p-6 max-w-6xl mx-auto">
-        <span class="font-bold text-xl tracking-tighter">FJGUILLÉN</span>
-        <a href="#demo" class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition">Probar Demo</a>
-    </nav>
-
-    <header class="max-w-4xl mx-auto text-center py-20 px-6">
-        <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-6">
-            Tu WhatsApp responde solo. <br>
-            <span class="text-blue-600">Tu agenda se llena sola.</span>
-        </h1>
-        <p class="text-lg text-slate-600 mb-10 max-w-2xl mx-auto">
-            Configuro asistentes inteligentes que gestionan citas, filtran clientes y responden preguntas 24/7. Sin dashboards raros. Todo en tu móvil.
-        </p>
-    </header>
-
-    <section class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
-        <div class="md:col-span-2 bg-white p-8 rounded-3xl border border-slate-100 shadow-sm overflow-hidden flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2">
-                <h3 class="text-2xl font-bold mb-4">Pack Agenda 24/7</h3>
-                <p class="text-slate-600">Ideal para peluquerías y centros de estética. Coge citas en Google Calendar mientras estás trabajando.</p>
-                <ul class="mt-4 space-y-2 text-sm text-slate-500">
-                    <li>✓ Reservas, cambios y cancelaciones</li>
-                    <li>✓ Preguntas frecuentes (Precios, horario)</li>
-                    <li>✓ Escala a humano en urgencias</li>
-                </ul>
-            </div>
-            <div id="demo" class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
-                <div class="w-48 h-96 bg-slate-900 rounded-[2.5rem] border-[6px] border-slate-800 shadow-2xl flex items-center justify-center text-slate-500 text-xs text-center p-4 italic">
-                    [Tu Video de WhatsApp Aquí]
-                </div>
+    <nav class="fixed w-full z-50 backdrop-blur-md bg-white/70 dark:bg-slate-900/70 border-b border-slate-100 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="font-extrabold text-xl tracking-tighter">FJGUILLÉN</span>
+            <div class="flex items-center gap-6">
+                <button onclick="toggleDarkMode()" class="p-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:scale-110 transition">
+                    <span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span>
+                </button>
+                <a href="#contacto" class="hidden md:block bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold">Hablar ahora</a>
             </div>
         </div>
+    </nav>
 
-        <div class="bg-blue-600 p-8 rounded-3xl text-white flex flex-col justify-center">
-            <h3 class="text-2xl font-bold mb-4">Clínicas & Pro</h3>
-            <p class="opacity-90 mb-6">Reducción de ausentismo y gestión de pacientes con integración API.</p>
-            <span class="text-xs font-mono bg-blue-500 py-1 px-3 rounded-full w-fit">Próximamente</span>
+    <section class="pt-32 pb-20 px-6 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <div class="md:col-span-7">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+                Construyo <span class="text-blue-600">empleados digitales</span> para tu negocio.
+            </h1>
+            <p class="text-xl text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                Soy Francisco Javier Guillén. Ayudo a pymes y profesionales a dejar de perder el tiempo en WhatsApp para que se centren en lo que de verdad importa.
+            </p>
+            <div class="flex gap-4">
+                <a href="#soluciones" class="bg-slate-900 dark:bg-white dark:text-slate-900 text-white px-6 py-3 rounded-2xl font-bold">Ver soluciones</a>
+                <a href="#sobre-mi" class="px-6 py-3 rounded-2xl font-bold border border-slate-200 dark:border-slate-700">Sobre mí</a>
+            </div>
+        </div>
+        <div class="md:col-span-5 flex justify-center">
+            <div class="relative w-64 h-64 md:w-80 md:h-80">
+                <div class="absolute inset-0 bg-blue-600 rounded-[3rem] rotate-6 opacity-20"></div>
+                <img src="tu-foto.jpg" alt="Francisco Javier Guillén" class="absolute inset-0 w-full h-full object-cover rounded-[3rem] shadow-2xl grayscale hover:grayscale-0 transition-all duration-500">
+            </div>
         </div>
     </section>
 
-    <footer class="bg-white border-t border-slate-100 py-20 px-6 text-center">
-        <h2 class="text-3xl font-bold mb-4">¿Hablamos?</h2>
-        <p class="text-slate-500 mb-8">Dime qué negocio tienes y te diré cómo podemos automatizarlo.</p>
-        <a href="https://wa.me/tu_numero" class="inline-flex items-center gap-2 bg-emerald-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-emerald-600 transition shadow-lg">
-            Escríbeme por WhatsApp
-        </a>
-        <p class="mt-12 text-xs text-slate-400">© 2026 Francisco Javier Guillén. Hecho en España.</p>
-    </footer>
+    <section id="soluciones" class="max-w-6xl mx-auto px-6 py-20">
+        <h2 class="text-3xl font-bold mb-12">Soluciones reales por sector</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            
+            <div class="md:col-span-2 bento-item">
+                <div class="flex justify-between items-start mb-10">
+                    <div>
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">Tiempo</span>
+                        <h3 class="text-2xl font-bold mt-2">Agenda 24/7</h3>
+                    </div>
+                    <span class="text-3xl">📅</span>
+                </div>
+                <div class="aspect-video bg-slate-100 dark:bg-slate-700 rounded-2xl mb-4 flex items-center justify-center italic text-slate-400">
+                    [Video: Agendar Cita]
+                </div>
+                <p class="text-sm text-slate-500">Perfecto para Peluquerías, Clínicas y Fisios.</p>
+            </div>
+
+            <div class="bento-item">
+                <span class="text-3xl">🔍</span>
+                <h3 class="text-xl font-bold mt-4">Filtro de Leads</h3>
+                <p class="text-sm text-slate-500 mt-2 italic">¿Tiene presupuesto? ¿Es urgente? La IA lo sabe antes que tú.</p>
+                <div class="mt-4 aspect-[4/5] bg-slate-100 dark:bg-slate-700 rounded-2xl"></div>
+            </div>
+
+            <div class="bento-item">
+                <span class="text-3xl">⭐</span>
+                <h3 class="text-xl font-bold mt-4">Reputación</h3>
+                <p class="text-sm text-slate-500 mt-2">Pide reseñas automáticamente tras la cita. Oro puro para SEO local.</p>
+            </div>
+
+            <div class="md:col-span-2 bento-item bg-slate-900 dark:bg-blue-600 text-white border-none">
+                <h3 class="text-2xl font-bold mb-4">Gestor de Bajas de última hora</h3>
+                <p class="opacity-80">Si un cliente cancela, el bot contacta automáticamente a la lista de espera para llenar el hueco. No pierdas ni un euro.</p>
+                <div class="mt-6 flex gap-2">
+                    <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Peluquerías</span>
+                    <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Dentistas</span>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 bento-item">
+                <h3 class="text-xl font-bold mb-2">Recordatorios Anti-Olvido</h3>
+                <p class="text-sm text-slate-500">Confirmación 24h antes. Si no contestan, se libera el hueco automáticamente.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-6 py-20 border-t border-slate-100 dark:border-slate-800">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+            <div>
+                <h2 class="text-3xl font-bold">Casos Reales</h2>
+                <p class="text-slate-500 mt-2">Resultados medibles en negocios que ya confían en mí.</p>
+            </div>
+            <span class="text-sm font-bold text-blue-600 mt-4 md:mt-0">PRÓXIMAMENTE 2026</span>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 opacity-40 grayscale">
+            <div class="p-8 border-2 border-dashed border-slate-200 dark:border-slate-700 rounded-3xl">
+                <p class="italic text-lg">"Espacio reservado para el primer gran caso de éxito en una Clínica Dental..."</p>
+                <div class="mt-6 flex items-center gap-4">
+                    <div class="w-12 h-12 bg-slate-200 rounded-full"></div>
+                    <div class="h-4 w-32 bg-slate-200 rounded"></div>
+                </div>
+            </div>
+            <div class="p-8 border-2 border-dashed border-slate-200 dark:border-slate-700 rounded-3xl">
+                <p class="italic text-lg">"Estamos midiendo el ahorro de horas en una empresa de Reformas..."</p>
+            </div>
+        </div>
+    </section>
 
 </body>
 </html>
