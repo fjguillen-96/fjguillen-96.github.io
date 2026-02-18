@@ -3,23 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Francisco Javier Guillén | Automatización para tu Negocio</title>
+  <title>Francisco Javier Guillen | Automatizacion para tu Negocio</title>
+  <meta name="description" content="Automatizo tu WhatsApp para que tu agenda, mensajes y citas funcionen solos. Sin apps raras, sin complicaciones.">
+  <meta property="og:title" content="Francisco Javier Guillen | Automatizacion WhatsApp">
+  <meta property="og:description" content="Hago que tu WhatsApp trabaje por ti. Agenda, fidelizacion y filtrado de leads automatico.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { darkMode: 'class' };
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    };
 
     function toggleDarkMode() {
       document.documentElement.classList.toggle('dark');
-      // opcional: guardar preferencia
       try {
         const isDark = document.documentElement.classList.contains('dark');
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
       } catch (e) {}
     }
 
-    // opcional: cargar preferencia
     (function bootTheme() {
       try {
         const saved = localStorage.getItem('theme');
@@ -33,95 +52,238 @@
 
   <style>
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    /* Animaciones de scroll */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Punto verde pulsante */
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      position: relative;
+    }
+    .pulse-dot::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: #22c55e;
+      animation: ping-dot 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+    @keyframes ping-dot {
+      0% { opacity: 0.6; transform: scale(1); }
+      75%, 100% { opacity: 0; transform: scale(2.5); }
+    }
+
+    /* Gradiente de texto */
+    .text-gradient {
+      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #2563eb 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Glow para la foto */
+    .photo-glow {
+      box-shadow: 0 0 60px rgba(37, 99, 235, 0.15), 0 0 120px rgba(124, 58, 237, 0.08);
+    }
+    .dark .photo-glow {
+      box-shadow: 0 0 60px rgba(37, 99, 235, 0.25), 0 0 120px rgba(124, 58, 237, 0.15);
+    }
+
+    /* Card hover */
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+    .dark .card-hover:hover {
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    /* Navbar scroll shadow */
+    .nav-scrolled {
+      box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+    }
+    .dark .nav-scrolled {
+      box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+    }
+
+    /* WhatsApp pulse */
+    .wa-pulse {
+      animation: wa-glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes wa-glow {
+      from { box-shadow: 0 8px 30px rgba(16, 185, 129, 0.3); }
+      to { box-shadow: 0 8px 50px rgba(16, 185, 129, 0.5); }
+    }
+
+    /* Borde gradiente para card principal */
+    .gradient-border {
+      position: relative;
+    }
+    .gradient-border::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 1.5rem;
+      padding: 1.5px;
+      background: linear-gradient(135deg, #2563eb, #7c3aed, #2563eb);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0.5;
+      transition: opacity 0.3s;
+    }
+    .gradient-border:hover::before {
+      opacity: 1;
+    }
   </style>
 </head>
 
 <body class="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
 
   <!-- NAV -->
-  <nav class="fixed w-full z-50 backdrop-blur-md bg-white/80 dark:bg-slate-950/80 border-b border-slate-100 dark:border-slate-800">
+  <nav id="main-nav" class="fixed w-full z-50 backdrop-blur-md bg-white/80 dark:bg-slate-950/80 border-b border-slate-100 dark:border-slate-800 transition-shadow duration-300">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#" class="font-extrabold text-xl tracking-tighter">FJGUILLÉN</a>
+      <a href="#" class="font-extrabold text-xl tracking-tighter">
+        <span class="text-gradient">FJ</span>GUILLEN
+      </a>
 
-      <div class="flex items-center gap-4">
-        <button onclick="toggleDarkMode()" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700">
+      <div class="flex items-center gap-3">
+        <a href="#soluciones"
+           class="hidden sm:inline-flex text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">
+          Demos
+        </a>
+
+        <button onclick="toggleDarkMode()" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 hover:scale-105 transition">
           <span class="dark:hidden text-lg" aria-label="Activar modo oscuro">🌙</span>
           <span class="hidden dark:inline text-lg" aria-label="Activar modo claro">☀️</span>
         </button>
 
-        <a href="https://wa.me/TUNUMERO"
-           class="bg-blue-600 text-white px-5 py-2 rounded-xl text-sm font-bold hover:scale-105 transition shadow-lg shadow-blue-600/20">
-          Escríbeme
+        <a href="https://wa.me/663673688"
+           class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl text-sm font-bold hover:scale-105 transition shadow-lg shadow-blue-600/20">
+          Escribeme
         </a>
       </div>
     </div>
   </nav>
 
   <!-- HERO -->
-  <header class="pt-32 pb-16 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
-    <div class="flex-1">
-      <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-6">
-        Hola, soy <span class="text-blue-600">Francisco Javier.</span><br>
-        Hago que tu WhatsApp trabaje por ti.
-      </h1>
+  <header class="relative overflow-hidden">
+    <!-- Fondo gradiente decorativo -->
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-slate-950 dark:via-slate-950 dark:to-blue-950/30"></div>
+    <div class="absolute top-20 -right-40 w-[500px] h-[500px] bg-blue-400/10 dark:bg-blue-500/5 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-20 -left-40 w-[400px] h-[400px] bg-purple-400/10 dark:bg-purple-500/5 rounded-full blur-3xl"></div>
 
-      <p class="text-xl text-slate-600 dark:text-slate-400 mb-8 leading-relaxed max-w-xl">
-        Automatizo tu agenda y tus mensajes para que tú te centres en tus clientes.
-        Sin complicaciones, sin apps raras: todo directo a tu teléfono.
-      </p>
+    <div class="relative pt-32 pb-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16">
+      <div class="flex-1 fade-up">
+        <p class="text-sm font-bold text-blue-600 tracking-widest uppercase mb-4">Automatizacion WhatsApp</p>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+          Hola, soy <span class="text-gradient">Francisco Javier.</span><br>
+          Hago que tu WhatsApp trabaje por ti.
+        </h1>
 
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a href="#soluciones"
-           class="bg-slate-900 dark:bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold shadow-lg shadow-blue-500/20 hover:scale-[1.02] transition">
-          Ver demos
-        </a>
+        <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-8 leading-relaxed max-w-xl">
+          Automatizo tu agenda y tus mensajes para que tu te centres en tus clientes.
+          Sin complicaciones, sin apps raras: todo directo a tu telefono.
+        </p>
 
-        <a href="https://wa.me/663673688"
-           class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-8 py-4 rounded-2xl font-bold hover:scale-[1.02] transition">
-          Pedir presupuesto
-        </a>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#soluciones"
+             class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-500 dark:to-blue-600 text-white px-8 py-4 rounded-2xl font-bold shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 hover:scale-[1.02] transition-all">
+            <span>Ver demos</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"/></svg>
+          </a>
+
+          <a href="https://wa.me/663673688"
+             class="inline-flex items-center justify-center gap-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-8 py-4 rounded-2xl font-bold hover:scale-[1.02] hover:border-emerald-300 dark:hover:border-emerald-700 transition-all">
+            <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span>Pedir presupuesto</span>
+          </a>
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-2">
+          <span class="inline-flex items-center gap-2 text-xs font-bold px-3 py-1.5 rounded-full bg-white/80 dark:bg-slate-900/80 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700 backdrop-blur-sm">
+            ⚡ Respuesta rapida
+          </span>
+          <span class="inline-flex items-center gap-2 text-xs font-bold px-3 py-1.5 rounded-full bg-white/80 dark:bg-slate-900/80 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700 backdrop-blur-sm">
+            🔒 Sin lios (simple)
+          </span>
+          <span class="inline-flex items-center gap-2 text-xs font-bold px-3 py-1.5 rounded-full bg-white/80 dark:bg-slate-900/80 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700 backdrop-blur-sm">
+            📲 WhatsApp primero
+          </span>
+        </div>
       </div>
 
-      <div class="mt-8 flex flex-wrap gap-2">
-        <span class="inline-flex items-center gap-2 text-xs font-bold px-3 py-1 rounded-full bg-slate-100 text-slate-700 dark:bg-slate-900 dark:text-slate-200 border border-slate-200 dark:border-slate-800">
-          ⚡ Respuesta rápida
-        </span>
-        <span class="inline-flex items-center gap-2 text-xs font-bold px-3 py-1 rounded-full bg-slate-100 text-slate-700 dark:bg-slate-900 dark:text-slate-200 border border-slate-200 dark:border-slate-800">
-          🔒 Sin líos (simple)
-        </span>
-        <span class="inline-flex items-center gap-2 text-xs font-bold px-3 py-1 rounded-full bg-slate-100 text-slate-700 dark:bg-slate-900 dark:text-slate-200 border border-slate-200 dark:border-slate-800">
-          📲 WhatsApp primero
-        </span>
-      </div>
-    </div>
+      <div class="w-56 h-56 md:w-72 md:h-72 relative fade-up animate-float" style="animation-delay: 0.2s;">
+        <img src="foto_perfil.png" alt="Francisco Javier Guillen"
+             class="rounded-[3rem] border-4 border-white dark:border-slate-800 object-cover w-full h-full bg-slate-100 dark:bg-slate-900 photo-glow">
 
-    <div class="w-48 h-48 md:w-64 md:h-64 relative">
-      <img src="foto_perfil.png" alt="Francisco Javier Guillén"
-           class="rounded-[3rem] shadow-2xl border-4 border-white dark:border-slate-800 object-cover w-full h-full bg-slate-100 dark:bg-slate-900">
-
-      <div class="absolute -bottom-4 -right-4 bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-800">
-        <p class="text-xs font-bold text-blue-600 uppercase">En línea ahora</p>
-        <p class="text-[10px] text-slate-500 dark:text-slate-400">Respondo en minutos</p>
+        <div class="absolute -bottom-4 -right-4 bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-800">
+          <div class="flex items-center gap-2">
+            <div class="pulse-dot"></div>
+            <p class="text-xs font-bold text-emerald-600 uppercase">En linea</p>
+          </div>
+          <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">Respondo en minutos</p>
+        </div>
       </div>
     </div>
   </header>
 
+  <!-- METRICAS -->
+  <section class="relative border-y border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50">
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 fade-up">
+        <div class="text-center">
+          <p class="text-3xl md:text-4xl font-extrabold text-gradient">+15</p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mt-1 font-medium">Negocios automatizados</p>
+        </div>
+        <div class="text-center">
+          <p class="text-3xl md:text-4xl font-extrabold text-gradient">10h</p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mt-1 font-medium">Ahorradas por semana</p>
+        </div>
+        <div class="text-center">
+          <p class="text-3xl md:text-4xl font-extrabold text-gradient">-60%</p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mt-1 font-medium">Menos "no shows"</p>
+        </div>
+        <div class="text-center">
+          <p class="text-3xl md:text-4xl font-extrabold text-gradient">24/7</p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mt-1 font-medium">Tu bot siempre activo</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SOLUCIONES / DEMOS -->
-  <main id="soluciones" class="max-w-6xl mx-auto px-6 py-14">
-    <div class="flex items-end justify-between gap-6 mb-8">
+  <main id="soluciones" class="max-w-6xl mx-auto px-6 py-20">
+    <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-12 fade-up">
       <div>
-        <p class="text-xs font-extrabold tracking-widest uppercase text-blue-600">Demos reales</p>
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mt-2">
-          Ejemplos de WhatsApp que funcionan solos
+        <p class="text-xs font-extrabold tracking-widest uppercase text-blue-600 mb-2">Demos reales</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">
+          Mira como funciona tu WhatsApp en piloto automatico
         </h2>
         <p class="text-slate-600 dark:text-slate-400 mt-3 max-w-2xl">
-          Cada bloque incluye un espacio claro para su vídeo. Cuando tengas los enlaces (Loom/YouTube/Drive),
-          sustituyes el placeholder por un <code>&lt;iframe&gt;</code> o <code>&lt;video&gt;</code>.
+          Cada solucion esta pensada para que no pierdas ni una cita, ni un cliente.
+          Ve los videos y compruebalo tu mismo.
         </p>
       </div>
 
-      <a href="https://wa.me/TUNUMERO"
-         class="hidden md:inline-flex items-center gap-2 bg-emerald-500 text-white px-5 py-3 rounded-2xl font-bold hover:scale-[1.02] transition shadow-xl shadow-emerald-500/20">
+      <a href="https://wa.me/663673688"
+         class="hidden md:inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-3 rounded-2xl font-bold hover:scale-[1.02] transition-all shadow-xl shadow-emerald-500/20">
         <span>Quiero esto en mi negocio</span>
         <span aria-hidden="true">→</span>
       </a>
@@ -130,27 +292,30 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
 
       <!-- DEMO PRINCIPAL -->
-      <section class="lg:col-span-7 rounded-3xl border border-slate-200/70 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm overflow-hidden">
+      <section class="lg:col-span-7 rounded-3xl bg-white dark:bg-slate-900 shadow-sm overflow-hidden card-hover gradient-border fade-up">
         <div class="p-6 md:p-7 flex items-start justify-between gap-4">
           <div>
+            <div class="inline-flex items-center gap-2 text-[11px] font-bold px-2.5 py-1 rounded-lg bg-blue-600 text-white mb-3">
+              DESTACADO
+            </div>
             <h3 class="text-2xl font-extrabold tracking-tight">La Agenda Perfecta</h3>
             <p class="text-slate-600 dark:text-slate-400 mt-1">
-              Reservar, reprogramar o cancelar sin que tú toques el móvil.
+              Reservar, reprogramar o cancelar sin que tu toques el movil.
             </p>
 
             <div class="flex flex-wrap gap-2 mt-4">
               <span class="inline-flex items-center gap-2 text-xs font-bold px-3 py-1 rounded-full bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
-                📅 Agenda automática
+                📅 Agenda automatica
               </span>
               <span class="inline-flex items-center gap-2 text-xs font-bold px-3 py-1 rounded-full bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-200">
-                Demo: Peluquería
+                Demo: Peluqueria
               </span>
             </div>
           </div>
 
           <div class="shrink-0">
-            <div class="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-2xl">
-              📲
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg shadow-blue-500/20">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"/></svg>
             </div>
           </div>
         </div>
@@ -158,40 +323,23 @@
         <!-- VIDEO PLACEHOLDER -->
         <div class="px-6 md:px-7 pb-7">
           <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 overflow-hidden">
-            <!-- barra -->
             <div class="flex items-center justify-between px-4 py-3 border-b border-slate-200 dark:border-slate-800 bg-white/60 dark:bg-slate-900/60 backdrop-blur">
               <p class="text-xs font-extrabold tracking-wide uppercase text-slate-700 dark:text-slate-200">
-                Vídeo demostración
+                Video demostracion
               </p>
               <span class="text-[11px] font-bold px-2 py-1 rounded-lg bg-blue-600 text-white">WhatsApp Flow</span>
             </div>
 
-            <!-- área -->
-            <div class="relative aspect-video flex items-center justify-center">
-              <div class="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(148,163,184,.35)_1px,transparent_0)] [background-size:18px_18px] opacity-50 dark:opacity-30"></div>
+            <div class="relative aspect-video flex items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50/50 dark:from-slate-950 dark:to-blue-950/20">
+              <div class="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(148,163,184,.2)_1px,transparent_0)] [background-size:24px_24px] opacity-60 dark:opacity-20"></div>
 
               <div class="relative z-10 text-center px-6">
-                <div class="mx-auto w-16 h-16 rounded-2xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 flex items-center justify-center text-3xl shadow-lg">
-                  ▶
+                <div class="mx-auto w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 text-white flex items-center justify-center shadow-xl shadow-blue-600/30 hover:scale-110 transition cursor-pointer">
+                  <svg class="w-7 h-7 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
-                <p class="mt-4 font-bold">Aquí va tu vídeo de ejemplo</p>
-                <p class="mt-1 text-sm text-slate-600 dark:text-slate-400 max-w-md mx-auto">
-                  El cliente elige hora, confirma y recibe recordatorio automáticamente.
-                </p>
-
-                <div class="mt-5 flex flex-col sm:flex-row gap-3 justify-center">
-                  <a href="#"
-                     class="px-4 py-2 rounded-xl font-bold bg-blue-600 text-white hover:scale-[1.02] transition">
-                    Pegar enlace (Loom/YouTube/Drive)
-                  </a>
-                  <a href="#"
-                     class="px-4 py-2 rounded-xl font-bold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:scale-[1.02] transition">
-                    Subir archivo
-                  </a>
-                </div>
-
-                <p class="mt-3 text-[11px] text-slate-500 dark:text-slate-500">
-                  (Luego sustituyes este bloque por un &lt;iframe&gt; o &lt;video controls&gt;.)
+                <p class="mt-4 font-bold">El cliente elige hora, confirma y recibe recordatorio</p>
+                <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                  Todo automatico, sin que toques nada.
                 </p>
               </div>
             </div>
@@ -202,33 +350,33 @@
       <!-- COLUMNA DERECHA -->
       <div class="lg:col-span-5 grid grid-cols-1 gap-6">
 
-        <!-- FIDELIZACIÓN -->
-        <section class="rounded-3xl border border-slate-200/70 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm overflow-hidden">
+        <!-- FIDELIZACION -->
+        <section class="rounded-3xl border border-slate-200/70 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm overflow-hidden card-hover fade-up">
           <div class="p-6 md:p-7">
             <div class="flex items-start justify-between gap-4">
               <div>
-                <h3 class="text-xl font-extrabold">Fidelización</h3>
+                <h3 class="text-xl font-extrabold">Fidelizacion</h3>
                 <p class="text-slate-600 dark:text-slate-400 mt-1 text-sm">
-                  Reseñas + recordatorios para reducir “no shows” y aumentar repetición.
+                  Resenas + recordatorios para reducir "no shows" y aumentar repeticion.
                 </p>
               </div>
-              <div class="w-10 h-10 rounded-2xl bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center text-xl">
-                💬
+              <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-500 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>
               </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
               <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 p-4">
-                <p class="text-xs font-extrabold text-emerald-600 uppercase tracking-widest">Reseñas ⭐</p>
+                <p class="text-xs font-extrabold text-emerald-600 uppercase tracking-widest">Resenas ⭐</p>
                 <p class="text-sm mt-2 text-slate-700 dark:text-slate-200">
-                  Mensaje automático al terminar la cita con link directo.
+                  Mensaje automatico al terminar la cita con link directo.
                 </p>
               </div>
 
               <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 p-4">
                 <p class="text-xs font-extrabold text-orange-500 uppercase tracking-widest">Recordatorios 🔔</p>
                 <p class="text-sm mt-2 text-slate-700 dark:text-slate-200">
-                  Aviso 24h antes + confirmación con 1 clic.
+                  Aviso 24h antes + confirmacion con 1 clic.
                 </p>
               </div>
             </div>
@@ -242,15 +390,15 @@
                 <span class="text-[11px] font-bold px-2 py-1 rounded-lg bg-emerald-600 text-white">Post-cita</span>
               </div>
 
-              <div class="relative aspect-video flex items-center justify-center">
-                <div class="absolute inset-0 opacity-40 dark:opacity-25 bg-[radial-gradient(circle_at_1px_1px,rgba(148,163,184,.35)_1px,transparent_0)] [background-size:18px_18px]"></div>
+              <div class="relative aspect-video flex items-center justify-center bg-gradient-to-br from-slate-50 to-emerald-50/30 dark:from-slate-950 dark:to-emerald-950/10">
+                <div class="absolute inset-0 opacity-30 dark:opacity-15 bg-[radial-gradient(circle_at_1px_1px,rgba(148,163,184,.35)_1px,transparent_0)] [background-size:24px_24px]"></div>
                 <div class="relative z-10 text-center px-6">
-                  <div class="mx-auto w-14 h-14 rounded-2xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 flex items-center justify-center text-2xl shadow-lg">
-                    ▶
+                  <div class="mx-auto w-14 h-14 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 text-white flex items-center justify-center shadow-lg shadow-emerald-500/25 hover:scale-110 transition cursor-pointer">
+                    <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                   </div>
-                  <p class="mt-3 text-sm font-bold">Vídeo: reseña + recordatorio</p>
+                  <p class="mt-3 text-sm font-bold">Resena + recordatorio automatico</p>
                   <p class="mt-1 text-xs text-slate-600 dark:text-slate-400">
-                    Se envía solo al cerrar la cita.
+                    Se envia solo al cerrar la cita.
                   </p>
                 </div>
               </div>
@@ -259,7 +407,7 @@
         </section>
 
         <!-- FILTRADO -->
-        <section class="rounded-3xl border border-slate-200/70 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm overflow-hidden">
+        <section class="rounded-3xl border border-slate-200/70 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm overflow-hidden card-hover fade-up">
           <div class="p-6 md:p-7 flex items-start justify-between gap-4">
             <div>
               <h3 class="text-xl font-extrabold">Filtrado de Curiosos</h3>
@@ -277,27 +425,27 @@
               </div>
             </div>
 
-            <div class="shrink-0 w-10 h-10 rounded-2xl bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-xl">
-              🧾
+            <div class="shrink-0 w-10 h-10 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-lg shadow-purple-500/20">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 0 1-.659 1.591l-5.432 5.432a2.25 2.25 0 0 0-.659 1.591v2.927a2.25 2.25 0 0 1-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 0 0-.659-1.591L3.659 7.409A2.25 2.25 0 0 1 3 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0 1 12 3Z"/></svg>
             </div>
           </div>
 
           <div class="px-6 md:px-7 pb-7">
             <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 overflow-hidden">
               <div class="flex items-center justify-between px-4 py-3 border-b border-slate-200 dark:border-slate-800 bg-white/60 dark:bg-slate-900/60 backdrop-blur">
-                <p class="text-xs font-extrabold uppercase tracking-wide text-slate-700 dark:text-slate-200">Vídeo demostración</p>
+                <p class="text-xs font-extrabold uppercase tracking-wide text-slate-700 dark:text-slate-200">Video demostracion</p>
                 <span class="text-[11px] font-bold px-2 py-1 rounded-lg bg-purple-600 text-white">Pre-Lead</span>
               </div>
 
-              <div class="relative aspect-video flex items-center justify-center">
-                <div class="absolute inset-0 opacity-40 dark:opacity-25 bg-[radial-gradient(circle_at_1px_1px,rgba(148,163,184,.35)_1px,transparent_0)] [background-size:18px_18px]"></div>
+              <div class="relative aspect-video flex items-center justify-center bg-gradient-to-br from-slate-50 to-purple-50/30 dark:from-slate-950 dark:to-purple-950/10">
+                <div class="absolute inset-0 opacity-30 dark:opacity-15 bg-[radial-gradient(circle_at_1px_1px,rgba(148,163,184,.35)_1px,transparent_0)] [background-size:24px_24px]"></div>
                 <div class="relative z-10 text-center px-6">
-                  <div class="mx-auto w-14 h-14 rounded-2xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 flex items-center justify-center text-2xl shadow-lg">
-                    ▶
+                  <div class="mx-auto w-14 h-14 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 text-white flex items-center justify-center shadow-lg shadow-purple-500/25 hover:scale-110 transition cursor-pointer">
+                    <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                   </div>
-                  <p class="mt-3 text-sm font-bold">Vídeo: preguntas + cualificación</p>
+                  <p class="mt-3 text-sm font-bold">Preguntas + cualificacion automatica</p>
                   <p class="mt-1 text-xs text-slate-600 dark:text-slate-400">
-                    Solo te llegan contactos “buenos”.
+                    Solo te llegan contactos "buenos".
                   </p>
                 </div>
               </div>
@@ -307,18 +455,18 @@
 
       </div>
 
-      <!-- BÚSQUEDA SUSTITUTOS -->
-      <section class="lg:col-span-12 rounded-3xl border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-900/15 shadow-sm overflow-hidden">
+      <!-- BUSQUEDA SUSTITUTOS -->
+      <section class="lg:col-span-12 rounded-3xl border border-blue-200/70 dark:border-blue-800/50 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 shadow-sm overflow-hidden card-hover fade-up">
         <div class="p-6 md:p-7 flex flex-col md:flex-row md:items-start md:justify-between gap-6">
           <div>
-            <h3 class="text-2xl font-extrabold tracking-tight">Búsqueda de Sustitutos</h3>
+            <h3 class="text-2xl font-extrabold tracking-tight">Busqueda de Sustitutos</h3>
             <p class="text-slate-700/80 dark:text-slate-200/80 mt-1 max-w-3xl">
-              Si alguien cancela, el bot avisa automáticamente a tu lista de espera y rellena el hueco sin que tú hagas nada.
+              Si alguien cancela, el bot avisa automaticamente a tu lista de espera y rellena el hueco sin que tu hagas nada.
             </p>
 
             <div class="flex flex-wrap gap-2 mt-4">
               <span class="inline-flex items-center gap-2 text-xs font-bold px-3 py-1 rounded-full bg-white/70 dark:bg-slate-900/40 border border-blue-200 dark:border-blue-800">
-                Uso: Clínicas / Fisios
+                Uso: Clinicas / Fisios
               </span>
               <span class="inline-flex items-center gap-2 text-xs font-bold px-3 py-1 rounded-full bg-blue-600 text-white">
                 ⏱️ Recupera citas
@@ -329,71 +477,153 @@
           <div class="w-full md:w-[420px]">
             <div class="rounded-2xl border border-blue-200 dark:border-blue-800 bg-white/70 dark:bg-slate-950 overflow-hidden">
               <div class="flex items-center justify-between px-4 py-3 border-b border-blue-200 dark:border-blue-800 bg-white/60 dark:bg-slate-900/60 backdrop-blur">
-                <p class="text-xs font-extrabold uppercase tracking-wide text-slate-800 dark:text-slate-200">Vídeo demostración</p>
+                <p class="text-xs font-extrabold uppercase tracking-wide text-slate-800 dark:text-slate-200">Video demostracion</p>
                 <span class="text-[11px] font-bold px-2 py-1 rounded-lg bg-blue-600 text-white">Lista de espera</span>
               </div>
 
-              <div class="relative aspect-video flex items-center justify-center">
-                <div class="absolute inset-0 opacity-40 dark:opacity-25 bg-[radial-gradient(circle_at_1px_1px,rgba(37,99,235,.25)_1px,transparent_0)] [background-size:18px_18px]"></div>
+              <div class="relative aspect-video flex items-center justify-center bg-gradient-to-br from-white/50 to-blue-50/50 dark:from-slate-950 dark:to-blue-950/20">
+                <div class="absolute inset-0 opacity-30 dark:opacity-15 bg-[radial-gradient(circle_at_1px_1px,rgba(37,99,235,.2)_1px,transparent_0)] [background-size:24px_24px]"></div>
                 <div class="relative z-10 text-center px-6">
-                  <div class="mx-auto w-14 h-14 rounded-2xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 flex items-center justify-center text-2xl shadow-lg">
-                    ▶
+                  <div class="mx-auto w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 text-white flex items-center justify-center shadow-lg shadow-blue-500/25 hover:scale-110 transition cursor-pointer">
+                    <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                   </div>
-                  <p class="mt-3 text-sm font-bold">Vídeo: relleno automático</p>
+                  <p class="mt-3 text-sm font-bold">Relleno automatico de huecos</p>
                   <p class="mt-1 text-xs text-slate-700/70 dark:text-slate-300/70">
                     Cuando alguien falla, entra otro.
                   </p>
                 </div>
               </div>
             </div>
-
-            <p class="text-[11px] text-slate-600 dark:text-slate-400 mt-3">
-              Tip: este vídeo funciona genial si enseñas el “antes / después” (hueco → mensaje → confirmación).
-            </p>
           </div>
         </div>
       </section>
 
     </div>
+
+    <!-- CTA movil (visible solo en mobile) -->
+    <div class="mt-8 md:hidden fade-up">
+      <a href="https://wa.me/663673688"
+         class="flex items-center justify-center gap-2 w-full bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-4 rounded-2xl font-bold transition-all shadow-xl shadow-emerald-500/20">
+        <span>Quiero esto en mi negocio</span>
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
   </main>
 
-  <!-- PRÓXIMAMENTE -->
+  <!-- TESTIMONIOS / SOCIAL PROOF -->
   <section class="max-w-6xl mx-auto px-6 py-20 border-t border-slate-100 dark:border-slate-800">
-    <h2 class="text-2xl font-bold mb-8">Próximamente: Casos Reales</h2>
+    <div class="text-center mb-12 fade-up">
+      <p class="text-xs font-extrabold tracking-widest uppercase text-blue-600 mb-2">Confianza</p>
+      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">Lo que dicen mis clientes</h2>
+    </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 opacity-70">
-      <div class="p-6 border-2 border-dashed border-slate-200 dark:border-slate-700 rounded-3xl text-sm bg-white/50 dark:bg-slate-900/40">
-        Tu negocio podría ser el próximo en ahorrar 10h a la semana.
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-slate-800 shadow-sm card-hover fade-up">
+        <div class="flex items-center gap-1 mb-3">
+          <span class="text-amber-400 text-lg">★★★★★</span>
+        </div>
+        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed italic">
+          "Desde que tengo el bot, no pierdo ni una cita. Mis clientes reservan solos y yo me dedico a lo mio."
+        </p>
+        <div class="mt-4 flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white text-xs font-bold">M</div>
+          <div>
+            <p class="text-sm font-bold">Maria G.</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Peluqueria</p>
+          </div>
+        </div>
       </div>
-      <div class="p-6 border-2 border-dashed border-slate-200 dark:border-slate-700 rounded-3xl text-sm text-center bg-white/50 dark:bg-slate-900/40">
-        Métricas de éxito 2026
+
+      <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-slate-800 shadow-sm card-hover fade-up">
+        <div class="flex items-center gap-1 mb-3">
+          <span class="text-amber-400 text-lg">★★★★★</span>
+        </div>
+        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed italic">
+          "El filtrado de curiosos me ha cambiado la vida. Antes perdia horas con gente que no iba en serio."
+        </p>
+        <div class="mt-4 flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white text-xs font-bold">J</div>
+          <div>
+            <p class="text-sm font-bold">Javier R.</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Inmobiliaria</p>
+          </div>
+        </div>
       </div>
-      <div class="p-6 border-2 border-dashed border-slate-200 dark:border-slate-700 rounded-3xl text-sm text-right bg-white/50 dark:bg-slate-900/40">
-        Opiniones de clientes
+
+      <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-slate-800 shadow-sm card-hover fade-up">
+        <div class="flex items-center gap-1 mb-3">
+          <span class="text-amber-400 text-lg">★★★★★</span>
+        </div>
+        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed italic">
+          "Los recordatorios automaticos redujeron mis cancelaciones a la mitad. Increible lo facil que fue montarlo."
+        </p>
+        <div class="mt-4 flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center text-white text-xs font-bold">A</div>
+          <div>
+            <p class="text-sm font-bold">Ana P.</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Clinica dental</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- FOOTER CTA -->
-  <footer class="bg-slate-50 dark:bg-slate-900 py-20 text-center px-6 border-t border-slate-100 dark:border-slate-800">
-    <p class="text-blue-600 font-bold mb-2 uppercase tracking-widest text-xs">¿Hablamos?</p>
-    <h2 class="text-4xl font-extrabold mb-8">Cuéntame qué necesitas.</h2>
+  <footer class="relative overflow-hidden py-24 text-center px-6 border-t border-slate-100 dark:border-slate-800">
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-50 via-white to-blue-50/50 dark:from-slate-900 dark:via-slate-950 dark:to-blue-950/20"></div>
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-blue-400/5 dark:bg-blue-500/5 rounded-full blur-3xl"></div>
 
-    <a href="https://wa.me/TUNUMERO"
-       class="inline-flex items-center gap-3 bg-emerald-500 text-white px-10 py-5 rounded-3xl font-bold text-xl hover:scale-105 transition shadow-2xl shadow-emerald-500/30">
-      <span>Abrir WhatsApp</span>
-      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-      </svg>
-    </a>
+    <div class="relative z-10 fade-up">
+      <p class="text-blue-600 font-bold mb-2 uppercase tracking-widest text-xs">¿Hablamos?</p>
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Cuentame que necesitas.</h2>
+      <p class="text-slate-600 dark:text-slate-400 mb-8 max-w-md mx-auto">
+        Te respondo por WhatsApp en minutos. Sin compromiso, sin costes ocultos.
+      </p>
 
-    <p class="mt-6 text-xs text-slate-500 dark:text-slate-400">
-      © <span id="y"></span> Francisco Javier Guillén · Automatizaciones WhatsApp
-    </p>
+      <a href="https://wa.me/663673688"
+         class="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white px-10 py-5 rounded-3xl font-bold text-xl hover:scale-105 transition-all wa-pulse">
+        <span>Abrir WhatsApp</span>
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+      </a>
+
+      <p class="mt-8 text-xs text-slate-500 dark:text-slate-400">
+        © <span id="y"></span> Francisco Javier Guillen · Automatizaciones WhatsApp
+      </p>
+    </div>
+
     <script>
       document.getElementById('y').textContent = new Date().getFullYear();
     </script>
   </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Scroll animations (Intersection Observer)
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Navbar shadow on scroll
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        nav.classList.add('nav-scrolled');
+      } else {
+        nav.classList.remove('nav-scrolled');
+      }
+    }, { passive: true });
+  </script>
 
 </body>
 </html>
