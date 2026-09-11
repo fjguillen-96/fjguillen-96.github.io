@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Francisco Javier Guillén | Ingeniero Aeroespacial & Desarrollador Full-Stack / AI</title>
-  <meta name="description" content="Portfolio de Francisco Javier Guillén Navarro. Ingeniero en GMV, Desarrollador Full-Stack, Sistemas GNSS, Automatización e Inteligencia Artificial en Madrid." />
+  <title>Francisco Javier Guillén | Aerospace & Software Engineer | AI & Workflow Automation</title>
+  <meta name="description" content="Portfolio de Francisco Javier Guillén Navarro. Space Software Engineer en GMV, Desarrollo Web Full-Stack, Automatización de Workflows con IA (Vibe Coding) y Sistemas GNSS en Madrid." />
   <meta name="author" content="Francisco Javier Guillén Navarro" />
   
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Francisco Javier Guillén | Portfolio" />
-  <meta property="og:description" content="Ingeniero Aeroespacial & Desarrollador Full-Stack / AI. Proyectos, SaaS, sistemas de datos y automatización." />
+  <meta property="og:description" content="Aerospace & Software Engineer | AI & Workflow Automation. Space Software en GMV, SaaS en producción (FaroPúblico, Sinodapp) y herramientas Open Source (agy-rc)." />
   <meta property="og:image" content="foto_perfil.png" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -71,30 +72,14 @@
       font-family: 'JetBrains Mono', monospace;
     }
     .glass-nav {
-      background: rgba(255, 255, 255, 0.82);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
     }
     .dark .glass-nav {
-      background: rgba(10, 15, 29, 0.82);
+      background: rgba(10, 15, 29, 0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-    }
-    .glow-effect {
-      position: relative;
-    }
-    .glow-effect::before {
-      content: '';
-      position: absolute;
-      inset: -2px;
-      border-radius: inherit;
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      z-index: -1;
-    }
-    .glow-effect:hover::before {
-      opacity: 1;
     }
     .bg-grid-pattern {
       background-size: 32px 32px;
@@ -108,7 +93,6 @@
         linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
     }
-    /* Toast animation */
     @keyframes toastIn {
       from { opacity: 0; transform: translateY(16px); }
       to { opacity: 1; transform: translateY(0); }
@@ -119,13 +103,7 @@
   </style>
 </head>
 
-<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300 min-h-screen relative selection:bg-blue-500 selection:text-white bg-grid-pattern">
-
-  <!-- TOAST NOTIFICATION (Copy feedback) -->
-  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden bg-slate-900 dark:bg-white text-white dark:text-slate-950 px-5 py-3 rounded-2xl shadow-2xl font-medium text-sm items-center gap-3 toast-anim border border-slate-700 dark:border-slate-300">
-    <svg class="w-4 h-4 text-emerald-400 dark:text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-    <span id="toast-text">Email copiado al portapapeles</span>
-  </div>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 antialiased selection:bg-blue-600 selection:text-white transition-colors duration-300">
 
   <!-- NAVIGATION -->
   <header class="fixed top-0 left-0 w-full z-40 glass-nav border-b border-slate-200/80 dark:border-slate-800/80 transition-all duration-300">
@@ -138,7 +116,7 @@
         </div>
         <div class="flex flex-col">
           <span class="font-extrabold text-base tracking-tight text-slate-900 dark:text-white leading-tight">Francisco Guillén</span>
-          <span class="text-[11px] font-mono-code font-semibold text-blue-600 dark:text-blue-400">Software & Aerospace Eng.</span>
+          <span class="text-[11px] font-mono-code font-semibold text-blue-600 dark:text-blue-400">Aerospace & Software Eng.</span>
         </div>
       </a>
 
@@ -160,13 +138,19 @@
         </button>
 
         <!-- GitHub Icon -->
-        <a href="https://github.com/fjguillen-96" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="hidden sm:inline-flex p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700/80 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+        <a href="https://github.com/fjguillen-96" target="_blank" rel="noopener noreferrer" aria-label="Perfil de GitHub" class="hidden sm:inline-flex p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700/80 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+
+        <!-- CV Download -->
+        <a href="CV_Francisco_Guillen.pdf" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold px-3.5 py-2.5 rounded-xl border border-slate-200/80 dark:border-slate-700/80 transition-all">
+          <svg class="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+          <span>CV</span>
         </a>
 
         <!-- Contact CTA -->
         <a href="#contacto" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl shadow-md shadow-blue-500/20 hover:scale-105 transition-all">
-          <span>Hablemos</span>
+          <span>Contacto</span>
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
         </a>
 
@@ -184,9 +168,13 @@
       <a href="#experiencia" onclick="toggleMobileMenu()" class="text-slate-700 dark:text-slate-200 py-1">Experiencia</a>
       <a href="#stack" onclick="toggleMobileMenu()" class="text-slate-700 dark:text-slate-200 py-1">Tecnologías</a>
       <a href="#contacto" onclick="toggleMobileMenu()" class="text-slate-700 dark:text-slate-200 py-1">Contacto</a>
-      <div class="pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center gap-4">
-        <a href="https://github.com/fjguillen-96" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400">
-          <span>GitHub: @fjguillen-96</span>
+      <div class="pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+        <a href="CV_Francisco_Guillen.pdf" target="_blank" class="text-xs font-bold text-blue-600 dark:text-blue-400 flex items-center gap-1.5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+          <span>Descargar CV (PDF)</span>
+        </a>
+        <a href="https://github.com/fjguillen-96" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-600 dark:text-slate-400">
+          GitHub: @fjguillen-96
         </a>
       </div>
     </div>
@@ -202,7 +190,7 @@
         <!-- Status Pill -->
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800/80 text-emerald-700 dark:text-emerald-300 text-xs font-semibold mb-6 shadow-sm">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span>Ingeniero en GMV · Construyendo software y datos</span>
+          <span>Space Software Engineer en GMV · AI & Workflow Automation</span>
         </div>
 
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15] mb-6">
@@ -213,8 +201,7 @@
         </h1>
 
         <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 font-normal leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
-          <strong>Ingeniero Aeroespacial</strong> y <strong>Desarrollador Full-Stack & AI</strong>. 
-          Combino rigor técnico, arquitecturas web modernas (TypeScript, Next.js, Python), sistemas satelitales GNSS y automatizaciones inteligentes.
+          <strong>Ingeniero Aeroespacial</strong> y <strong>Software Engineer</strong> especializado en software espacial, visión por computador y sistemas críticos. Apasionado por la optimización de flujos de trabajo de equipo y el desarrollo acelerado por IA (<em>Vibe Coding</em>) con Claude Code, Codex y Antigravity.
         </p>
 
         <!-- CTA Buttons -->
@@ -226,10 +213,10 @@
 
           <a href="https://github.com/fjguillen-96" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-800 px-6 py-3.5 rounded-2xl font-bold text-sm shadow-sm hover:scale-[1.02] transition-all">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            <span>GitHub</span>
+            <span>GitHub (@fjguillen-96)</span>
           </a>
 
-          <button onclick="copyEmail('fran.guillennavarro.drive@gmail.com')" class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700/80 px-5 py-3.5 rounded-2xl font-semibold text-sm hover:scale-[1.02] transition-all" title="Copiar email">
+          <button onclick="copyEmail('fj.guillennavarro@gmail.com')" class="inline-flex items-center gap-2 bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700/80 px-5 py-3.5 rounded-2xl font-semibold text-sm hover:scale-[1.02] transition-all" title="Copiar email">
             <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
             <span>Copiar Email</span>
           </button>
@@ -238,13 +225,13 @@
         <!-- Highlights pills -->
         <div class="mt-10 flex flex-wrap justify-center lg:justify-start gap-2.5 text-xs font-semibold text-slate-600 dark:text-slate-400">
           <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 flex items-center gap-1.5 shadow-sm">
-            <span class="text-blue-500">🛰️</span> GNSS & Satellite Data
+            <span class="text-blue-500">🛰️</span> Space Software & GNSS
           </span>
           <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 flex items-center gap-1.5 shadow-sm">
-            <span class="text-indigo-500">⚡</span> Full-Stack Next.js & Python
+            <span class="text-indigo-500">⚡</span> Python, Bash, Next.js & Flutter
           </span>
           <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 flex items-center gap-1.5 shadow-sm">
-            <span class="text-purple-500">🤖</span> Agentes AI & n8n
+            <span class="text-purple-500">🤖</span> Vibe Coding & Workflow Automation
           </span>
           <span class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 flex items-center gap-1.5 shadow-sm">
             <span class="text-emerald-500">📍</span> Madrid, España
@@ -255,7 +242,7 @@
 
       <!-- Right image & visual card -->
       <div class="relative group">
-        <div class="absolute -inset-2 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-[2.5rem] blur-xl opacity-20 group-hover:opacity-35 transition duration-500"></div>
+        <div class="absolute -inset-2 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-[2.5rem] blur-xl opacity-25 group-hover:opacity-40 transition duration-500"></div>
         
         <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-[2.2rem] overflow-hidden border-4 border-white dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xl">
           <img src="foto_perfil.png" alt="Francisco Javier Guillén Navarro" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
@@ -267,15 +254,15 @@
             🚀
           </div>
           <div>
-            <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Ingeniería</p>
-            <p class="text-xs font-extrabold text-slate-800 dark:text-slate-200">GMV Aerospace</p>
+            <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Rol Actual</p>
+            <p class="text-xs font-extrabold text-slate-800 dark:text-slate-200">Space Software Engineer @ GMV</p>
           </div>
         </div>
 
         <!-- Float badge: Stack -->
         <div class="absolute -top-3 -right-3 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-3.5 py-2 rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-2">
-          <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
-          <span class="text-xs font-bold text-slate-800 dark:text-slate-200">Full-Stack & AI</span>
+          <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
+          <span class="text-xs font-bold text-slate-800 dark:text-slate-200">AI & Vibe Coding</span>
         </div>
       </div>
 
@@ -285,22 +272,22 @@
     <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
       <div class="p-6 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200/70 dark:border-slate-800/80 shadow-sm text-center">
         <p class="text-3xl sm:text-4xl font-extrabold text-blue-600 dark:text-blue-400">GMV</p>
-        <p class="text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 mt-1">Ingeniería de Sistemas</p>
+        <p class="text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 mt-1">Sistemas Espaciales & Críticos</p>
       </div>
 
       <div class="p-6 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200/70 dark:border-slate-800/80 shadow-sm text-center">
-        <p class="text-3xl sm:text-4xl font-extrabold text-indigo-600 dark:text-indigo-400">15+</p>
-        <p class="text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 mt-1">Proyectos & Repos</p>
+        <p class="text-3xl sm:text-4xl font-extrabold text-indigo-600 dark:text-indigo-400">M.S. & B.S.</p>
+        <p class="text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 mt-1">Ingeniería Aeronáutica (UPM)</p>
       </div>
 
       <div class="p-6 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200/70 dark:border-slate-800/80 shadow-sm text-center">
-        <p class="text-3xl sm:text-4xl font-extrabold text-purple-600 dark:text-purple-400">Next / Py</p>
-        <p class="text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 mt-1">Stack Core Moderno</p>
+        <p class="text-3xl sm:text-4xl font-extrabold text-purple-600 dark:text-purple-400">Vibe Code</p>
+        <p class="text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 mt-1">Claude, Codex, Antigravity</p>
       </div>
 
       <div class="p-6 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200/70 dark:border-slate-800/80 shadow-sm text-center">
         <p class="text-3xl sm:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400">100%</p>
-        <p class="text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 mt-1">Rigor & Precisión</p>
+        <p class="text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 mt-1">Rigor, Precisión y Rendimiento</p>
       </div>
     </div>
   </section>
@@ -314,31 +301,31 @@
           <span>Sobre mí</span>
         </div>
         <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-          De la ingeniería aeroespacial al desarrollo de software escalable.
+          De la ingeniería de sistemas espaciales al software moderno de alto impacto.
         </h2>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
-          Graduado en <strong>Ingeniería Aeroespacial</strong> y actualmente desempeñándome como ingeniero en <strong>GMV</strong> en Madrid. Mi formación me ha dotado de una sólida base cuantitativa, modelado matemático y mentalidad de primeros principios.
+          Ingeniero Aeroespacial (Máster y Grado por la <strong>Universidad Politécnica de Madrid</strong>) y actualmente <strong>Space Software Engineer en GMV</strong> en Madrid. Cuento con una sólida trayectoria en software para sistemas espaciales críticos en tiempo real, visión artificial y fiabilidad operacional.
         </p>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
-          En paralelo, desarrollo software de punta a punta: desde plataformas SaaS en producción (<a href="https://github.com/fjguillen-96/faropublico" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold underline">FaroPúblico</a>, GNSS Data Hub) y aplicaciones web colaborativas (<a href="https://github.com/fjguillen-96/sinodapp" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold underline">Sinodapp</a>), hasta pipelines de datos satelitales, agentes de inteligencia artificial y automatizaciones operativas.
+          Me apasiona la <strong>automatización de flujos de trabajo</strong> para multiplicar la eficiencia operativa, y el <strong>desarrollo acelerado por IA (Vibe Coding)</strong>: aprovecho herramientas de vanguardia (Claude Code, OpenAI Codex, Google Antigravity) para prototipar, construir y poner en producción rápidamente aplicaciones completas (web y móvil Flutter).
         </p>
 
         <div class="pt-3 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm font-semibold">
           <div class="flex items-center gap-2.5 text-slate-700 dark:text-slate-200">
             <svg class="w-4 h-4 text-blue-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-            <span>Arquitectura Clean & Modular</span>
+            <span>Software Aeroespacial & Crítico</span>
           </div>
           <div class="flex items-center gap-2.5 text-slate-700 dark:text-slate-200">
             <svg class="w-4 h-4 text-blue-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-            <span>Procesamiento de Datos & APIs</span>
+            <span>Automatización Proactiva de Procesos</span>
           </div>
           <div class="flex items-center gap-2.5 text-slate-700 dark:text-slate-200">
             <svg class="w-4 h-4 text-blue-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-            <span>Modelos LLM & Flujos n8n</span>
+            <span>Vibe Coding & Agentes Autónomos</span>
           </div>
           <div class="flex items-center gap-2.5 text-slate-700 dark:text-slate-200">
             <svg class="w-4 h-4 text-blue-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-            <span>Sistemas Críticos & Satelitales</span>
+            <span>Full-Stack Moderno & Mobile (Flutter)</span>
           </div>
         </div>
       </div>
@@ -349,39 +336,39 @@
           <div class="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center text-2xl mb-4">
             🛰️
           </div>
-          <h3 class="text-base font-bold mb-1 text-slate-900 dark:text-white">Aeroespacial & GNSS</h3>
+          <h3 class="text-base font-bold mb-1 text-slate-900 dark:text-white">Software Espacial & GNSS</h3>
           <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-            Mecánica orbital, cálculo termoquímico (CEA), simulación de motores cohete y distribución de datos GNSS/RINEX.
+            Sistemas críticos en tiempo real en Python y Bash en GMV, análisis de navegación satelital y simulación de propulsión.
           </p>
         </div>
 
         <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-indigo-400 dark:hover:border-indigo-500 transition-colors">
           <div class="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-2xl mb-4">
-            💻
+            ⚡
           </div>
-          <h3 class="text-base font-bold mb-1 text-slate-900 dark:text-white">Full-Stack Web</h3>
+          <h3 class="text-base font-bold mb-1 text-slate-900 dark:text-white">Workflow Automation</h3>
           <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-            Next.js 15, TypeScript, Tailwind CSS, bases de datos relacionales (Postgres, Neon, Supabase) y Turborepo.
+            Eliminación sistemática de fricciones operativas mediante scripts, bots desatendidos e integraciones con APIs.
           </p>
         </div>
 
         <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-purple-400 dark:hover:border-purple-500 transition-colors">
           <div class="w-12 h-12 rounded-2xl bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 flex items-center justify-center text-2xl mb-4">
-            🤖
+            🧠
           </div>
-          <h3 class="text-base font-bold mb-1 text-slate-900 dark:text-white">IA & Automatización</h3>
+          <h3 class="text-base font-bold mb-1 text-slate-900 dark:text-white">IA & Vibe Coding</h3>
           <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-            Integración de LLMs, agentes autónomos, LangChain, orquestación con n8n y soluciones con WhatsApp API.
+            Desarrollo ágil potenciado por LLMs (Claude Code, OpenAI Codex, Antigravity), flujos agentic y visión artificial.
           </p>
         </div>
 
         <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-emerald-400 dark:hover:border-emerald-500 transition-colors">
           <div class="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl mb-4">
-            📈
+            🌐
           </div>
-          <h3 class="text-base font-bold mb-1 text-slate-900 dark:text-white">Scraping & Data Hubs</h3>
+          <h3 class="text-base font-bold mb-1 text-slate-900 dark:text-white">Full-Stack & Mobile</h3>
           <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-            Extracción masiva de datos estructurados, APIs de alta velocidad en Python/FastAPI y analítica en tiempo real.
+            Plataformas web en producción (Next.js, FastAPI, PostgreSQL, Supabase) y aplicaciones multiplataforma en Flutter.
           </p>
         </div>
 
@@ -399,98 +386,184 @@
           Proyectos Destacados
         </h2>
         <p class="text-slate-600 dark:text-slate-400 text-sm mt-2 max-w-xl">
-          Selección de aplicaciones web, proyectos de ingeniería de datos, plataformas SaaS y automatizaciones con IA.
+          SaaS en producción, herramientas de desarrollo con IA (Vibe Coding), sistemas aeroespaciales y proyectos open source.
         </p>
       </div>
 
-      <!-- Filter Tabs -->
-      <div class="flex flex-wrap gap-2 p-1.5 bg-slate-200/60 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800">
+      <!-- Filters -->
+      <div class="inline-flex p-1.5 rounded-2xl bg-slate-200/70 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 self-start md:self-auto flex-wrap gap-1">
         <button onclick="filterProjects('all')" class="filter-btn active-filter px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white dark:bg-blue-600 text-slate-900 dark:text-white shadow-sm" data-category="all">
           Todos
         </button>
         <button onclick="filterProjects('web')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white" data-category="web">
-          Web & SaaS
+          SaaS & Web
         </button>
         <button onclick="filterProjects('ai')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white" data-category="ai">
-          IA & Automación
+          IA & Vibe Coding
         </button>
         <button onclick="filterProjects('aero')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white" data-category="aero">
-          Aeroespacial & Data
+          Aeroespacial & Datos
         </button>
       </div>
     </div>
 
     <!-- Projects Grid -->
-    <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <!-- PROJECT 1: FaroPúblico -->
+      <!-- PROJECT 1: FaroPúblico (faropublico.es) -->
       <div class="project-card group rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-category="web">
         <div>
           <div class="flex items-center justify-between gap-2 mb-4">
-            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-100 dark:border-blue-800/50">
-              SaaS en Producción
+            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60 flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              En Producción · SaaS
             </span>
             <div class="w-8 h-8 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 flex items-center justify-center text-sm font-bold">
               🏛️
             </div>
           </div>
 
-          <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-            FaroPúblico / LicitaHub
+          <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors flex items-center gap-2">
+            <span>FaroPúblico</span>
+            <span class="text-xs font-normal text-slate-400">faropublico.es</span>
           </h3>
           <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
-            Buscador inteligente y plataforma analítica para licitaciones y contratación pública en España. Scraping automatizado, procesamiento de pliegos, búsqueda vectorial con IA y alertas personalizadas para empresas.
+            Monitor y buscador inteligente de licitaciones públicas y contratación del Estado (PLACSP). Automatización de alertas personalizadas, scraping concurrente masivo y extracción/análisis semántico de pliegos técnicos mediante IA.
           </p>
         </div>
 
         <div>
           <div class="flex flex-wrap gap-1.5 mb-5 font-mono-code text-[11px]">
-            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Next.js 15</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Next.js</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">FastAPI</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">PostgreSQL</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">AI Scraping</span>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
+            <a href="https://faropublico.es" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-extrabold bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-xl shadow-sm transition-colors">
+              <span>Visitar faropublico.es</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+            <a href="https://github.com/fjguillen-96/faropublico" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+              <span>Repo</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 2: Antigravity Remote Control (agy-rc) -->
+      <div class="project-card group rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-category="ai">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 border border-blue-200 dark:border-blue-800/60 flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+              Open Source · PWA
+            </span>
+            <div class="w-8 h-8 rounded-xl bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 flex items-center justify-center text-sm font-bold">
+              📱
+            </div>
+          </div>
+
+          <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors flex items-center gap-2">
+            <span>Antigravity RC</span>
+            <span class="text-xs font-mono-code font-normal text-purple-500">agy-rc</span>
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+            Mobile-first PWA para controlar el asistente agente CLI de Google Antigravity (<code class="font-mono-code text-[11px] bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded">agy</code>) desde el móvil vía Tailscale. Streaming de chat en tiempo real, tarjetas interactivas de herramientas, dictado por voz y flujos de <em>vibe coding</em>.
+          </p>
+        </div>
+
+        <div>
+          <div class="flex flex-wrap gap-1.5 mb-5 font-mono-code text-[11px]">
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">PWA Mobile</span>
             <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">TypeScript</span>
-            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Neon Postgres</span>
-            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Turborepo</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Tailscale</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">AI Agents</span>
           </div>
 
           <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-            <span class="text-xs font-semibold text-slate-400">Arquitectura Monorepo</span>
-            <a href="https://github.com/fjguillen-96/faropublico" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline">
-              <span>Ver Repo</span>
+            <span class="text-xs font-semibold text-slate-400">Herramienta de IA</span>
+            <a href="https://github.com/fjguillen-96/agy-rc" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-extrabold text-purple-600 dark:text-purple-400 hover:underline">
+              <span>GitHub (Open Source)</span>
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
             </a>
           </div>
         </div>
       </div>
 
-      <!-- PROJECT 2: GNSS Data Hub -->
-      <div class="project-card group rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-category="aero">
+      <!-- PROJECT 3: Sinodapp (sinodapp.com) -->
+      <div class="project-card group rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-category="web">
         <div>
           <div class="flex items-center justify-between gap-2 mb-4">
-            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-indigo-50 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300 border border-indigo-100 dark:border-indigo-800/50">
-              Data & API Hub
+            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60 flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              En Producción · Web
             </span>
-            <div class="w-8 h-8 rounded-xl bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-sm font-bold">
-              🛰️
+            <div class="w-8 h-8 rounded-xl bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-sm font-bold">
+              🤝
             </div>
           </div>
 
-          <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-            GNSS Data Hub
+          <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors flex items-center gap-2">
+            <span>Sinodapp</span>
+            <span class="text-xs font-normal text-slate-400">sinodapp.com</span>
           </h3>
           <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
-            Plataforma web freemium y API para distribución, análisis y descarga de datos GNSS (ficheros RINEX, órbitas y productos IGS). Optimizado para investigación geoespacial y navegación por satélite.
+            Plataforma web colaborativa concebida para la gestión, comunicación y dinamización de comunidades, grupos parroquiales y procesos sinodales. Coordinación de encuentros, actas, avisos y roles en tiempo real con Supabase.
           </p>
         </div>
 
         <div>
           <div class="flex flex-wrap gap-1.5 mb-5 font-mono-code text-[11px]">
-            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">FastAPI</span>
             <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Next.js</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">TypeScript</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Supabase</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Tailwind</span>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
+            <a href="https://sinodapp.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-extrabold bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-xl shadow-sm transition-colors">
+              <span>Visitar sinodapp.com</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+            <a href="https://github.com/fjguillen-96/sinodapp" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+              <span>Repo</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 4: GNSS Data Hub -->
+      <div class="project-card group rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-category="aero">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-4">
+            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-amber-50 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300 border border-amber-100 dark:border-amber-800/50">
+              Aeroespacial & Datos
+            </span>
+            <div class="w-8 h-8 rounded-xl bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400 flex items-center justify-center text-sm font-bold">
+              🛰️
+            </div>
+          </div>
+
+          <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+            GNSS Data Hub
+          </h3>
+          <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+            Hub de APIs y portal para datos satelitales GNSS (GPS, Galileo, GLONASS). Descarga automatizada, extracción y normalización de ficheros RINEX y productos de órbitas y relojes IGS.
+          </p>
+        </div>
+
+        <div>
+          <div class="flex flex-wrap gap-1.5 mb-5 font-mono-code text-[11px]">
             <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Python</span>
-            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">PostgreSQL</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">FastAPI</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">RINEX Formats</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Docker</span>
           </div>
 
           <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-            <span class="text-xs font-semibold text-slate-400">Sistemas Satelitales</span>
+            <span class="text-xs font-semibold text-slate-400">Datos Satelitales</span>
             <a href="https://github.com/fjguillen-96/gnss-data-hub" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline">
               <span>Ver Repo</span>
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
@@ -499,37 +572,37 @@
         </div>
       </div>
 
-      <!-- PROJECT 3: Sinodapp -->
+      <!-- PROJECT 5: RatioDomus (Local-First Finance) -->
       <div class="project-card group rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-category="web">
         <div>
           <div class="flex items-center justify-between gap-2 mb-4">
-            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-purple-50 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 border border-purple-100 dark:border-purple-800/50">
-              Web & Mobile App
+            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-indigo-50 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300 border border-indigo-100 dark:border-indigo-800/50">
+              Local-First · FinTech
             </span>
-            <div class="w-8 h-8 rounded-xl bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 flex items-center justify-center text-sm font-bold">
-              📖
+            <div class="w-8 h-8 rounded-xl bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-sm font-bold">
+              💳
             </div>
           </div>
 
-          <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-            Sinodapp & Escrutar
+          <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+            RatioDomus
           </h3>
           <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
-            Suite digital para el análisis, búsqueda cruzada y escrutinio bíblico y litúrgico con base de datos en tiempo real, gestión comunitaria y sincronización offline-first.
+            Plataforma de finanzas personales y domésticas con filosofía local-first. Importación de extractos bancarios, presupuestos, metas de ahorro y proyecciones patrimoniales con ejecución y cifrado 100% en el navegador.
           </p>
         </div>
 
         <div>
           <div class="flex flex-wrap gap-1.5 mb-5 font-mono-code text-[11px]">
-            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">React</span>
-            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Supabase</span>
             <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">TypeScript</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Local-First</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">IndexedDB</span>
             <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Tailwind</span>
           </div>
 
           <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-            <span class="text-xs font-semibold text-slate-400">Full-Stack Cloud</span>
-            <a href="https://github.com/fjguillen-96/sinodapp" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline">
+            <span class="text-xs font-semibold text-slate-400">Privacidad y Finanzas</span>
+            <a href="https://github.com/fjguillen-96/ratiodomus" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline">
               <span>Ver Repo</span>
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
             </a>
@@ -537,37 +610,37 @@
         </div>
       </div>
 
-      <!-- PROJECT 4: AI & WhatsApp Agents -->
+      <!-- PROJECT 6: BioCompLab Automated Diagnostic Pipeline (UFV) -->
       <div class="project-card group rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-category="ai">
         <div>
           <div class="flex items-center justify-between gap-2 mb-4">
-            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 border border-emerald-100 dark:border-emerald-800/50">
-              IA & Automatización
+            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-cyan-50 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-300 border border-cyan-100 dark:border-cyan-800/50">
+              Investigación UFV
             </span>
-            <div class="w-8 h-8 rounded-xl bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-sm font-bold">
-              🤖
+            <div class="w-8 h-8 rounded-xl bg-cyan-50 dark:bg-cyan-900/20 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-sm font-bold">
+              🔬
             </div>
           </div>
 
-          <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
-            Agentes Autónomos & n8n
+          <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-2 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+            BioCompLab Vision & Fluid Pipeline
           </h3>
           <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
-            Ecosistema de flujos automatizados con n8n y modelos LLM (OpenAI, Claude) integrados con WhatsApp API para agendamiento inteligente, respuestas contextuales y cualificación automática de leads.
+            Automatización del preprocesamiento de secuencias de vídeo de alta velocidad y datos diagnósticos médicos en la Universidad Francisco de Vitoria. Soporte de cálculo computacional para modelos biomecánicos de fluidos celulares.
           </p>
         </div>
 
         <div>
           <div class="flex flex-wrap gap-1.5 mb-5 font-mono-code text-[11px]">
-            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">n8n</span>
-            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">LangChain</span>
-            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">WhatsApp API</span>
             <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Python</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">OpenCV</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">NumPy / SciPy</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Fluid Mechanics</span>
           </div>
 
           <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-            <span class="text-xs font-semibold text-slate-400">Workflows & LLM</span>
-            <a href="https://github.com/fjguillen-96/n8n_workflows" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline">
+            <span class="text-xs font-semibold text-slate-400">Biomecánica & CV</span>
+            <a href="https://github.com/fjguillen-96/BioCompLab" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline">
               <span>Ver Repo</span>
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
             </a>
@@ -575,23 +648,23 @@
         </div>
       </div>
 
-      <!-- PROJECT 5: Rocket Engine Simulator -->
+      <!-- PROJECT 7: Hybrid Rocket Engine Simulation & Design (TFG UPM) -->
       <div class="project-card group rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-category="aero">
         <div>
           <div class="flex items-center justify-between gap-2 mb-4">
-            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-amber-50 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300 border border-amber-100 dark:border-amber-800/50">
-              TFG Aeroespacial
+            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300 border border-rose-100 dark:border-rose-800/50">
+              Propulsión · TFG UPM
             </span>
-            <div class="w-8 h-8 rounded-xl bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400 flex items-center justify-center text-sm font-bold">
+            <div class="w-8 h-8 rounded-xl bg-rose-50 dark:bg-rose-900/20 text-rose-600 dark:text-rose-400 flex items-center justify-center text-sm font-bold">
               🚀
             </div>
           </div>
 
-          <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
-            Rocket Engine Simulator & CEA
+          <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-2 group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors">
+            Hybrid Rocket Engine Design
           </h3>
           <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
-            Diseño preliminar y simulación de motores cohete de propelente híbrido con cálculo de equilibrio químico (NASA CEA en Python), análisis de regresión y trayectoria balística.
+            Trabajo de Fin de Grado en Ingeniería Aeroespacial (UPM). Simulación numérica y dimensionamiento termoquímico de equilibrio (NASA CEA) de motores cohete híbridos, cálculo de tasa de regresión y análisis de combustión.
           </p>
         </div>
 
@@ -599,12 +672,12 @@
           <div class="flex flex-wrap gap-1.5 mb-5 font-mono-code text-[11px]">
             <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Python</span>
             <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">NASA CEA</span>
-            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">NumPy / SciPy</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Propulsión</span>
             <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Matplotlib</span>
           </div>
 
           <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-            <span class="text-xs font-semibold text-slate-400">Propulsión Espacial</span>
+            <span class="text-xs font-semibold text-slate-400">UPM Aeroespacial</span>
             <a href="https://github.com/fjguillen-96/rocketry" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline">
               <span>Ver Repo</span>
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
@@ -613,115 +686,37 @@
         </div>
       </div>
 
-      <!-- PROJECT 6: Sencillo01 Storefront -->
-      <div class="project-card group rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-category="web">
+      <!-- PROJECT 8: Cardiopatías AI Detection (TFM UPM) -->
+      <div class="project-card group rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-category="ai">
         <div>
           <div class="flex items-center justify-between gap-2 mb-4">
-            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-pink-50 text-pink-700 dark:bg-pink-900/30 dark:text-pink-300 border border-pink-100 dark:border-pink-800/50">
-              E-Commerce Edge
+            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300 border border-violet-100 dark:border-violet-800/50">
+              Deep Learning · TFM UPM
             </span>
-            <div class="w-8 h-8 rounded-xl bg-pink-50 dark:bg-pink-900/20 text-pink-600 dark:text-pink-400 flex items-center justify-center text-sm font-bold">
-              🛍️
+            <div class="w-8 h-8 rounded-xl bg-violet-50 dark:bg-violet-900/20 text-violet-600 dark:text-violet-400 flex items-center justify-center text-sm font-bold">
+              🫀
             </div>
           </div>
 
-          <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-2 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors">
-            Sencillo01 Drops Storefront
+          <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
+            Detección de Cardiopatías con IA
           </h3>
           <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
-            Storefront ultra rápido diseñado para drops de productos físicos coleccionables. Construido con Shopify Hydrogen sobre runtime de borde (Oxygen/Remix) para máximo rendimiento.
+            Tesis de Máster en Ingeniería Aeronáutica (UPM, Especialidad Vehículos Espaciales). Modelos de Deep Learning y Visión Artificial aplicados a señales clínicas para la detección temprana y automatizada de patologías cardíacas.
           </p>
         </div>
 
         <div>
           <div class="flex flex-wrap gap-1.5 mb-5 font-mono-code text-[11px]">
-            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Hydrogen</span>
-            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Remix</span>
-            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">GraphQL</span>
-            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Tailwind</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">TensorFlow</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Keras / CNNs</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Deep Learning</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Scikit-Learn</span>
           </div>
 
           <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-            <span class="text-xs font-semibold text-slate-400">Headless Commerce</span>
-            <a href="https://github.com/fjguillen-96/sencillo01" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline">
-              <span>Ver Repo</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROJECT 7: adif-status -->
-      <div class="project-card group rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-category="aero">
-        <div>
-          <div class="flex items-center justify-between gap-2 mb-4">
-            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-cyan-50 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-300 border border-cyan-100 dark:border-cyan-800/50">
-              Open Source Python
-            </span>
-            <div class="w-8 h-8 rounded-xl bg-cyan-50 dark:bg-cyan-900/20 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-sm font-bold">
-              🚆
-            </div>
-          </div>
-
-          <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-2 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
-            adif-status
-          </h3>
-          <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
-            Módulo en Python para consultar y extraer en tiempo real los horarios de llegada y estados de circulación de trenes en estaciones de Adif (España) mediante scraping estructurado.
-          </p>
-        </div>
-
-        <div>
-          <div class="flex flex-wrap gap-1.5 mb-5 font-mono-code text-[11px]">
-            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Python</span>
-            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Web Scraping</span>
-            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">BeautifulSoup</span>
-          </div>
-
-          <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-            <span class="text-xs font-semibold text-slate-400">Librería Python</span>
-            <a href="https://github.com/fjguillen-96/adif-status" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline">
-              <span>Ver Repo</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROJECT 8: Personal Finance App -->
-      <div class="project-card group rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" data-category="web">
-        <div>
-          <div class="flex items-center justify-between gap-2 mb-4">
-            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 border border-emerald-100 dark:border-emerald-800/50">
-              FinTech Tool
-            </span>
-            <div class="w-8 h-8 rounded-xl bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-sm font-bold">
-              💳
-            </div>
-          </div>
-
-          <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
-            Personal Finance & Subs Manager
-          </h3>
-          <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
-            Herramienta para seguimiento de finanzas personales, gestión y alertas de suscripciones recurrentes y gráficos interactivos de evolución patrimonial.
-          </p>
-        </div>
-
-        <div>
-          <div class="flex flex-wrap gap-1.5 mb-5 font-mono-code text-[11px]">
-            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">TypeScript</span>
-            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">React</span>
-            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Tailwind</span>
-            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Charts</span>
-          </div>
-
-          <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-            <span class="text-xs font-semibold text-slate-400">Gestión Financiera</span>
-            <a href="https://github.com/fjguillen-96/personal-finance-app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline">
-              <span>Ver Repo</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-            </a>
+            <span class="text-xs font-semibold text-slate-400">Tesis Máster UPM</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">Deep Learning & Visión</span>
           </div>
         </div>
       </div>
@@ -737,51 +732,111 @@
         <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white mt-1">
           Experiencia & Formación
         </h2>
+        <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">
+          Ingeniería de sistemas espaciales, investigación y automatización técnica.
+        </p>
       </div>
 
       <!-- Timeline Items -->
       <div class="relative border-l-2 border-slate-200 dark:border-slate-800 pl-6 sm:pl-8 space-y-12">
         
-        <!-- Timeline Item 1 -->
+        <!-- Timeline Item 1: GMV -->
         <div class="relative group">
           <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-blue-600 border-4 border-white dark:border-slate-950 shadow-md"></div>
           
-          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-            <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">Ingeniero de Sistemas / Software</h3>
-            <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-50 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 font-mono-code">Actualidad · Madrid</span>
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+            <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">Space Software Engineer</h3>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-50 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 font-mono-code">Ago 2023 – Actualidad</span>
           </div>
-          <p class="text-sm font-bold text-blue-600 dark:text-blue-400 mb-3">GMV — Aerospace & Defence</p>
-          <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-            Ingeniería y desarrollo de software para sistemas críticos, tecnologías aeroespaciales y proyectos de navegación satelital (GNSS). Análisis de datos complejos, optimización y estándares de alta fiabilidad.
-          </p>
+          <p class="text-sm font-bold text-blue-600 dark:text-blue-400 mb-3">GMV · Madrid, España</p>
+          <ul class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed space-y-2 list-disc list-inside">
+            <li>Desarrollo de software aeroespacial crítico en tiempo real utilizando Bash y Python.</li>
+            <li><strong>Internal Workflow Automation:</strong> Diseño e implementación proactiva de herramientas automatizadas personalizadas para optimizar flujos de trabajo del equipo y eliminar tareas operativas repetitivas.</li>
+            <li>Operaciones aeroespaciales en entornos de alta exigencia con fuerte trabajo en equipo multidisciplinar.</li>
+          </ul>
         </div>
 
-        <!-- Timeline Item 2 -->
+        <!-- Timeline Item 2: UFV BioCompLab -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-cyan-500 border-4 border-white dark:border-slate-950 shadow-md"></div>
+          
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+            <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">Research Assistant</h3>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-cyan-50 dark:bg-cyan-900/40 text-cyan-700 dark:text-cyan-300 font-mono-code">Jun 2023 – Actualidad</span>
+          </div>
+          <p class="text-sm font-bold text-cyan-600 dark:text-cyan-400 mb-3">Universidad Francisco de Vitoria (BioCompLab) · Madrid, España</p>
+          <ul class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed space-y-2 list-disc list-inside">
+            <li>Automatización del preprocesamiento de secuencias de vídeo de alta velocidad y datos diagnósticos médicos mediante scripts personalizados en Python.</li>
+            <li>Cálculos técnicos y computación numérica para modelos de mecánica de fluidos celular.</li>
+          </ul>
+        </div>
+
+        <!-- Timeline Item 3: Airbus DS via Aertec -->
         <div class="relative group">
           <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-indigo-500 border-4 border-white dark:border-slate-950 shadow-md"></div>
           
-          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-            <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">Desarrollador Full-Stack & Creador de Software</h3>
-            <span class="px-3 py-1 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono-code">Proyectos & SaaS</span>
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+            <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">Consultant Engineer</h3>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-indigo-50 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 font-mono-code">Abr 2022 – Ago 2023</span>
           </div>
-          <p class="text-sm font-bold text-indigo-600 dark:text-indigo-400 mb-3">Soluciones Web, APIs & Agentes de IA</p>
-          <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-            Diseño, desarrollo y despliegue de plataformas completas: arquitectura monorepo con Turborepo, aplicaciones con Next.js 15, bases de datos PostgreSQL/Neon/Supabase y automatización de procesos empresariales con n8n e integraciones de modelos LLM.
-          </p>
+          <p class="text-sm font-bold text-indigo-600 dark:text-indigo-400 mb-3">Airbus DS (vía Aertec Solutions) · Madrid, España</p>
+          <ul class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed space-y-2 list-disc list-inside">
+            <li>Industrialización de pruebas funcionales y automatización de ensayos mediante scripting en MATLAB y Python en el programa A330-MRTT.</li>
+            <li>Apoyo a iniciativas de innovación con propuestas técnicas y prototipado rápido de soluciones.</li>
+          </ul>
         </div>
 
-        <!-- Timeline Item 3 -->
+        <!-- Timeline Item 4: Kerox Technology -->
         <div class="relative group">
           <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-purple-500 border-4 border-white dark:border-slate-950 shadow-md"></div>
           
-          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-            <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">Grado en Ingeniería Aeroespacial</h3>
-            <span class="px-3 py-1 rounded-full text-xs font-bold bg-purple-50 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 font-mono-code">Ingeniería</span>
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+            <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">Artificial Intelligence Researcher</h3>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-purple-50 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 font-mono-code">Abr 2021 – Ago 2021</span>
           </div>
-          <p class="text-sm font-bold text-purple-600 dark:text-purple-400 mb-3">Especialidad en Vehículos Aeroespaciales & Propulsión</p>
-          <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-            Formación integral en termodinámica, mecánica de fluidos, métodos numéricos y control. Trabajo de Fin de Grado: <em>"Preliminary design of hybrid propellant rocket engines"</em> con cálculo termoquímico y simulación de combustión en Python.
-          </p>
+          <p class="text-sm font-bold text-purple-600 dark:text-purple-400 mb-3">Kerox Technology · Madrid, España</p>
+          <ul class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed space-y-2 list-disc list-inside">
+            <li>Investigación en algoritmos de visión por computador, selección de arquitecturas y entrenamiento de modelos de deep learning.</li>
+          </ul>
+        </div>
+
+        <!-- Timeline Item 5: ISDEFE -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-400 border-4 border-white dark:border-slate-950 shadow-md"></div>
+          
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+            <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">Systems Engineer (Beca)</h3>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono-code">Dic 2019 – Ago 2020</span>
+          </div>
+          <p class="text-sm font-bold text-slate-600 dark:text-slate-400 mb-3">ISDEFE · Madrid, España</p>
+          <ul class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed space-y-2 list-disc list-inside">
+            <li>Validación de requisitos de seguridad y cumplimiento normativo para sistemas de Gestión de Tráfico Aéreo (ATM).</li>
+          </ul>
+        </div>
+
+        <!-- Timeline Item 6: Formación Universitaria -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-emerald-500 border-4 border-white dark:border-slate-950 shadow-md"></div>
+          
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+            <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">Máster & Grado en Ingeniería Aeronáutica / Aeroespacial</h3>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 font-mono-code">2015 – 2022</span>
+          </div>
+          <p class="text-sm font-bold text-emerald-600 dark:text-emerald-400 mb-3">Universidad Politécnica de Madrid (UPM)</p>
+          <div class="space-y-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+            <div>
+              <p class="font-bold text-slate-800 dark:text-slate-200">M.S. Aeronautical Engineering (2019 – 2022)</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Especialidad: Vehículos Espaciales · Tesis: <em>Detección de cardiopatías mediante Inteligencia Artificial</em>.</p>
+            </div>
+            <div>
+              <p class="font-bold text-slate-800 dark:text-slate-200">B.S. Aerospace Engineering (2015 – 2019)</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Especialidad: Propulsión Aeroespacial · Tesis: <em>Hybrid Rocket Engine Design</em>.</p>
+            </div>
+            <div class="pt-2 flex flex-wrap gap-2 text-xs font-semibold">
+              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Cert. Machine Learning (DeepLearning.ai)</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Neural Networks & Deep Learning (Stanford Univ.)</span>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -793,104 +848,105 @@
     <div class="text-center mb-14">
       <p class="text-xs font-extrabold tracking-widest uppercase text-blue-600 dark:text-blue-400">Habilidades Técnicas</p>
       <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white mt-1">
-        Stack Tecnológico & Herramientas
+        Tech Stack & Herramientas
       </h2>
       <p class="text-slate-600 dark:text-slate-400 text-sm mt-2 max-w-xl mx-auto">
-        Lenguajes, frameworks y ecosistemas con los que construyo soluciones robustas a diario.
+        Tecnologías, lenguajes y ecosistemas con los que desarrollo software espacial, web moderna y flujos de automatización.
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <!-- Category: Frontend -->
+      <!-- Category: AI & Vibe Coding -->
       <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
         <h3 class="text-base font-extrabold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-          <span class="text-blue-500">🎨</span> Frontend Moderno
+          <span class="text-purple-500">🧠</span> AI & Vibe Coding
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 border border-purple-100 dark:border-purple-800/40">Claude Code</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 border border-purple-100 dark:border-purple-800/40">OpenAI Codex</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 border border-purple-100 dark:border-purple-800/40">Google Antigravity</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">REST APIs</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Flutter / Dart</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Web Prototyping</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Prompt Engineering</span>
+        </div>
+      </div>
+
+      <!-- Category: Core Engineering -->
+      <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+        <h3 class="text-base font-extrabold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+          <span class="text-blue-500">⚙️</span> Core Engineering
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/40 font-bold">Python</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800/40 font-bold">Bash Scripting</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">C / C++</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">MATLAB / Simulink</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Git & SVN</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Linux & Windows</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Real-Time Systems</span>
+        </div>
+      </div>
+
+      <!-- Category: Data Science & ML -->
+      <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+        <h3 class="text-base font-extrabold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+          <span class="text-emerald-500">📊</span> Data Science & ML
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">TensorFlow / Keras</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">OpenCV (Computer Vision)</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">NumPy & Pandas</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">SciPy & Scikit-Learn</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Matplotlib</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Deep Learning</span>
+        </div>
+      </div>
+
+      <!-- Category: Full-Stack Web -->
+      <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+        <h3 class="text-base font-extrabold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+          <span class="text-indigo-500">💻</span> Full-Stack Web
         </h3>
         <div class="flex flex-wrap gap-2">
           <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">TypeScript</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">JavaScript (ES6+)</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Next.js 14 / 15</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Next.js 14/15</span>
           <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">React</span>
           <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Tailwind CSS</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Shopify Hydrogen</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">HTML5 / CSS3</span>
-        </div>
-      </div>
-
-      <!-- Category: Backend & Cloud -->
-      <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
-        <h3 class="text-base font-extrabold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-          <span class="text-indigo-500">⚙️</span> Backend, APIs & Cloud
-        </h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Node.js</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Python</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">PostgreSQL / Supabase</span>
           <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">FastAPI</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">PostgreSQL</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Neon Postgres</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Supabase</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">REST & GraphQL</span>
           <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Vercel</span>
-        </div>
-      </div>
-
-      <!-- Category: AI & Automation -->
-      <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
-        <h3 class="text-base font-extrabold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-          <span class="text-purple-500">🤖</span> IA & Automatización
-        </h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">LLM APIs (OpenAI/Claude)</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">LangChain</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">n8n Workflow Automation</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">WhatsApp Cloud API</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Playwright & BeautifulSoup</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Prompt Engineering</span>
         </div>
       </div>
 
       <!-- Category: Aerospace & Scientific -->
       <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
         <h3 class="text-base font-extrabold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-          <span class="text-amber-500">🛰️</span> Aeroespacial & Datos
+          <span class="text-amber-500">🛰️</span> Aeroespacial & GNSS
         </h3>
         <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">GNSS & RINEX Formats</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">NASA CEA (Termoquímica)</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">NumPy & SciPy</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Matplotlib</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Simulación Numérica</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Formatos GNSS & RINEX</span>
           <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Mecánica Orbital</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">NASA CEA (Termoquímica)</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Propulsión Cohete</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Simulación Numérica</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">ATM / Air Traffic Safety</span>
         </div>
       </div>
 
-      <!-- Category: Architecture & DevOps -->
+      <!-- Category: Automation & DevOps -->
       <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
         <h3 class="text-base font-extrabold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-          <span class="text-emerald-500">🛠️</span> Herramientas & DevOps
+          <span class="text-rose-500">🛠️</span> Automatización & Herramientas
         </h3>
         <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Git & GitHub</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Turborepo (Monorepos)</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">n8n Workflows</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Tailscale</span>
           <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Docker</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Linux / Bash</span>
           <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">GitHub Actions CI/CD</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">VS Code & Antigravity</span>
-        </div>
-      </div>
-
-      <!-- Category: Philosophy & Practices -->
-      <div class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
-        <h3 class="text-base font-extrabold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-          <span class="text-cyan-500">🎯</span> Principios de Desarrollo
-        </h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Clean Architecture</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Type-Safety Estricto</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Testing & Fiabilidad</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Rendimiento Web (Lighthouse 100)</span>
-          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Diseño Responsivo UI/UX</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Playwright & Scraping</span>
+          <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Systemd Services</span>
         </div>
       </div>
 
@@ -908,22 +964,22 @@
       <div class="relative z-10 text-center max-w-2xl mx-auto">
         <p class="text-blue-200 font-bold uppercase tracking-widest text-xs mb-3">Conectemos</p>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-6">
-          ¿Tienes un proyecto en mente o quieres charlar?
+          ¿Tienes un proyecto en mente o quieres contactar?
         </h2>
         <p class="text-blue-100/90 text-sm sm:text-base leading-relaxed mb-10">
-          Estoy disponible para colaboraciones tecnológicas, proyectos de software y consultoría técnica. Puedes escribirme por email o WhatsApp.
+          Disponible para ingeniería de software, automatizaciones de sistemas y colaboraciones tecnológicas. Escríbeme directamente por email o WhatsApp.
         </p>
 
         <!-- Contact Links Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left mb-10">
           
           <!-- Email card -->
-          <div onclick="copyEmail('fran.guillennavarro.drive@gmail.com')" class="cursor-pointer bg-white/10 hover:bg-white/20 backdrop-blur-md p-5 rounded-2xl border border-white/15 transition-all duration-200 group">
+          <div onclick="copyEmail('fj.guillennavarro@gmail.com')" class="cursor-pointer bg-white/10 hover:bg-white/20 backdrop-blur-md p-5 rounded-2xl border border-white/15 transition-all duration-200 group">
             <div class="flex items-center justify-between mb-2">
               <span class="text-xs text-blue-200 font-bold uppercase tracking-wider">Email</span>
               <span class="text-xs font-semibold bg-white/20 text-white px-2 py-0.5 rounded-lg group-hover:bg-white group-hover:text-blue-900 transition-colors">Copiar</span>
             </div>
-            <p class="text-sm sm:text-base font-bold truncate">fran.guillennavarro.drive@gmail.com</p>
+            <p class="text-sm sm:text-base font-bold truncate">fj.guillennavarro@gmail.com</p>
           </div>
 
           <!-- WhatsApp card -->
@@ -955,10 +1011,16 @@
 
         </div>
 
-        <a href="mailto:fran.guillennavarro.drive@gmail.com?subject=Contacto%20desde%20Portfolio&body=Hola%20Francisco," class="inline-flex items-center gap-2 bg-white text-slate-900 hover:bg-blue-50 px-8 py-4 rounded-2xl font-extrabold text-base shadow-xl hover:scale-105 transition-all">
-          <span>Enviar Mensaje por Correo</span>
-          <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-        </a>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="mailto:fj.guillennavarro@gmail.com?subject=Contacto%20desde%20Portfolio&body=Hola%20Francisco," class="inline-flex items-center gap-2 bg-white text-slate-900 hover:bg-blue-50 px-8 py-4 rounded-2xl font-extrabold text-base shadow-xl hover:scale-105 transition-all">
+            <span>Enviar Mensaje</span>
+            <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+          <a href="CV_Francisco_Guillen.pdf" target="_blank" class="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 text-white border border-white/20 px-8 py-4 rounded-2xl font-extrabold text-base transition-all">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            <span>Ver CV Completo (PDF)</span>
+          </a>
+        </div>
 
       </div>
     </div>
@@ -976,25 +1038,29 @@
       <div class="flex items-center gap-6 font-semibold">
         <a href="#sobre-mi" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Sobre mí</a>
         <a href="#proyectos" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Proyectos</a>
+        <a href="CV_Francisco_Guillen.pdf" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">CV (PDF)</a>
         <a href="https://github.com/fjguillen-96" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">GitHub</a>
         <a href="#contacto" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contacto</a>
       </div>
     </div>
   </footer>
 
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 hidden items-center gap-3 bg-slate-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-slate-700 text-sm font-semibold toast-anim">
+    <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+    <span id="toast-text">Copiado al portapapeles</span>
+  </div>
+
   <!-- JAVASCRIPT LOGIC -->
   <script>
-    // Set Year
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
-    // Mobile Menu Toggle
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
       menu.classList.toggle('hidden');
       menu.classList.toggle('flex');
     }
 
-    // Projects Category Filtering
     function filterProjects(category) {
       const cards = document.querySelectorAll('.project-card');
       const buttons = document.querySelectorAll('.filter-btn');
@@ -1008,7 +1074,8 @@
       });
 
       cards.forEach(card => {
-        if (category === 'all' || card.dataset.category === category) {
+        const cardCategories = (card.dataset.category || '').split(' ');
+        if (category === 'all' || cardCategories.includes(category)) {
           card.style.display = 'flex';
         } else {
           card.style.display = 'none';
@@ -1016,7 +1083,6 @@
       });
     }
 
-    // Copy to Clipboard Helper with Toast
     let toastTimeout;
     function copyEmail(email) {
       if (navigator.clipboard && window.isSecureContext) {
